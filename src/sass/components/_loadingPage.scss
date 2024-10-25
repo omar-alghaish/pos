@@ -1,0 +1,47 @@
+@import "../abstracts/colors";
+.loading_page_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 111111;
+  background-color: $light-bg-color-paper;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   .header{
+    height: 50px;
+    position: relative;
+    background-color: transparent;
+    .loading-container {
+        position: absolute;
+        top: 100%;
+    }
+   }
+   .logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+  .alphatek_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    .img_container {
+      width: 100px;
+      height: 30px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.dark .loading_page_container {
+  background-color: $dark-bg-color;
+}

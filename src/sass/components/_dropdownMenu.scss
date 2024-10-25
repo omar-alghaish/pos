@@ -1,0 +1,85 @@
+@import "../abstracts/colors";
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__button {
+    padding: 10px 20px;
+    background-color: $light-secondary-color !important;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px darken($light-bg-color, 10%)  ;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
+    padding: 10px;
+    list-style-type: none;
+    z-index: 100;
+    width: max-content;
+    min-width: 100%;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+      &.selected{
+        background-color: $light-bg-color !important;
+  
+      }
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+.dark .dropdown {
+  &__button {
+    background-color: $dark-secondary-color !important; // Dark mode button color
+    color: $dark-text-color; // Dark mode text color
+
+    //   &:hover {
+    //     background-color: red; // Dark mode hover color (define in colors)
+    //   }
+  }
+
+  &__menu {
+    box-shadow: 0 1px 10px darken($dark-bg-color, 10%)  ;
+
+    background-color: $dark-bg-color-paper; // Dark mode menu background
+    button {
+      color: $dark-text-color; // Dark mode button text color
+
+      &.selected{
+        background-color: $dark-bg-color !important;
+  
+      }
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "../abstracts/colors";
+.category_container {
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-start;
+  background-color: $light-bg-color-paper;
+  // width: 150px;
+  width: max-content;
+  padding: 8px 30px;
+  border-radius: 10px;
+  border: 1px solid $light-bg-color-paper;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 50px;
+  // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.033);
+  align-items: center;
+  justify-content: center;
+  &.active {
+    background-color: var(--light-primary-color);
+  }
+  &:hover {
+    border: 1px solid var(--light-primary-color);
+    background-color: rgba(0, 0, 255, 0.018);
+  }
+  // &.all{
+  //   background-color: var(--light-primary-color);
+  //   color: $light-secondary-color;
+  // }
+}
+
+.dark .category_container {
+  background-color: $dark-bg-color-paper;
+  border: 1px solid $dark-bg-color-paper;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.033);
+  &.active {
+    background-color: var(--dark-primary-color);
+  }
+  &:hover {
+    border: 1px solid var(--light-primary-color);
+    background-color: rgba(0, 0, 255, 0.018);
+  }
+}
+
+// Define your color variables
+$dark-background: #333;
+$dark-text: #fff;
+$dark-border: #444;
+
+// Normal styles
+.driver {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #000;
+}
+
+// Dark mode styles

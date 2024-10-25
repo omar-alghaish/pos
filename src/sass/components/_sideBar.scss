@@ -1,0 +1,221 @@
+@import "../abstracts/colors";
+
+.side_bar_container {
+  height: 100vh;
+  position: fixed; // Keep it fixed
+  z-index: 1111111;
+  background-color: rgba(0, 0, 0, 0.355);
+  // backdrop-filter: blur(3px);
+  width: 100vw;
+  overflow: hidden; // Prevent content overflow
+  opacity: 0; // Start hidden
+  transition: opacity 0.3s ease; // Smooth transitions
+  display: flex;
+  .side_bar_content {
+    background-color: $light-bg-color-paper;
+    height: 100%;
+    width: 400px;
+    max-width: 100%;
+    position: absolute; // Change to absolute
+    top: 0;
+    left: 0; // Ensure it starts from the left
+    transform: translateX(-100%); // Initially off screen
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+   
+  
+
+    .main {
+      height: max-content;
+    }
+
+    .header {
+      // background-color: $light-bg-color;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      padding-left: 20px;
+      padding-right: 20px;
+      &.parent_links_list {
+        button {
+          justify-content: space-between;
+          width: 100%;
+          color: black;
+          font-size: 15px;
+          padding: 0 15px;
+          text-transform: capitalize;
+
+          a {
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            height: 50px;
+          }
+
+          &.active {
+            background-color: $light-bg-color;
+          }
+
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &.child_links_list {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        button {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          justify-content: start;
+          width: 80%;
+          padding: 0 15px;
+
+          a {
+            width: 100%;
+          }
+
+          .color {
+            height: 8px;
+            width: 8px;
+            background-color: rgb(250, 27, 27); // Default color
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+
+    .other_links_list {
+      // Additional styles for other links can go here
+    }
+  }
+
+  // Dark theme styles
+
+}
+  .customers_results{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+background-color: $dark-secondary-color;
+// padding: 10px;
+border-radius: 10px;
+    button{
+      padding: 10px 5px;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 15px;
+    }
+  }
+.dark 
+  .side_bar_content {
+    background-color: $dark-bg-color-paper; // Dark mode background for sidebar content
+
+    .header {
+      // background-color: $dark-bg-color; // Dark mode background for header
+    }
+
+    ul {
+      &.parent_links_list {
+        button {
+          color: $dark-primary-color-text;
+
+          a {
+            color: $dark-primary-color-text;
+          }
+
+          &.active {
+            background-color: $dark-bg-color;
+          }
+        }
+      }
+
+      &.child_links_list {
+        button {
+          .color {
+            background-color: rgb(144, 202, 249); // A lighter color for dark mode for contrast
+          }
+        }
+      }
+    }
+  }
+
+
+  .rtl .side_bar_content{
+    left: auto;
+    right: 0;
+  }
+
+/* General Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-primary-color); /* Default handle color */
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7); /* Light hover effect (adjust if needed) */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: var(--light-primary-color) transparent; /* Handle color and track color */
+}
+
+/* Edge */
+:root {
+  --scrollbar-track: transparent; /* Track color for Edge */
+  --scrollbar-thumb: var(--light-primary-color); /* Handle color for Edge */
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Dark Mode Styles */
+.dark {
+  /* WebKit Browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar-thumb {
+    background: var(--dark-primary-color); /* Handle color */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7); /* Dark hover effect (adjust if needed) */
+  }
+
+  /* Firefox */
+  scrollbar-color: var(--dark-primary-color) transparent; /* Handle color and track color */
+}
+
+/* Edge */
+.dark {
+  --scrollbar-thumb: var(--dark-primary-color); /* Handle color for Edge */
+}
+
+

@@ -1,0 +1,94 @@
+@import "../abstracts/colors";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 15px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 17px;
+  width: 100%;
+  // font-weight: 700;
+
+  // Light mode styles
+  &.contained {
+    background-color: var(--light-primary-color); // MUI Primary Color
+    color: $light-primary-color-text;
+    &.secondary {
+      background-color: $light-secondary-color-text;
+    }
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid var(--light-primary-color); // MUI Primary Border Color
+    color: var(--light-primary-color);
+
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color: $light-secondary-color-text;
+
+    &.secondary {
+      color: $light-secondary-color-text;
+    }
+    &:hover {
+      background-color: $light-bg-color;
+      // filter: brightness(95%);
+    }
+  }
+  &.disabled {
+    filter: brightness(60%);
+    &:hover {
+      filter: brightness(60%) !important;
+      cursor: not-allowed;
+    }
+  }
+  // Dark mode styles
+}
+
+.dark .button {
+  &.contained {
+    background-color: var(
+      --dark-primary-color
+    ); // MUI Primary Color for dark mode
+    color: $dark-primary-color-text;
+    &.secondary {
+      background-color: $dark-secondary-color-text;
+    }
+    &:hover {
+      // background-color: darken($dark-primary-color, 5% );
+      // background-color: red;
+      filter: brightness(95%);
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid var(--dark-primary-color); // MUI Primary Border Color for dark mode
+    color: var(--dark-primary-color);
+
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color: $dark-primary-color-text;
+    &:hover {
+      background-color: $dark-bg-color;
+
+    }
+  }
+}

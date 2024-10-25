@@ -1,0 +1,140 @@
+@import "../abstracts/colors";
+
+.state_card_container {
+  background-color: $light-bg-color-paper;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+
+  .top_part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title_container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        color:  var(--light-primary-color);
+      }
+    }
+  }
+
+  .bottom_part {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .status {
+      border-radius: 3px;
+      padding: 5px;
+      font-size: 12px; // Default font size
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &.increase {
+        background-color: rgba(0, 255, 0, 0.155);
+        color: lime;
+        border: 1px solid rgba(0, 255, 0, 0.501);
+      }
+
+      &.decrease {
+        background-color: rgba(255, 47, 47, 0.155);
+        color: red;
+        border: 1px solid rgba(255, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+// Dark mode styles
+.dark .state_card_container {
+  background-color: $dark-bg-color-paper;
+
+  .top_part {
+    .title_container {
+      svg {
+        color:  var(--dark-primary-color);
+      }
+    }
+  }
+
+  .bottom_part {
+    .status {
+      &.increase {
+        // Adjust dark mode styles if necessary
+      }
+      &.decrease {
+        // Adjust dark mode styles if necessary
+      }
+    }
+  }
+}
+
+// Responsive styles for decreasing font sizes
+@media (max-width: 768px) { // Adjust the breakpoint as needed
+  .state_card_container {
+    padding: 15px; // Decrease padding
+
+    .top_part {
+      .title_container {
+        .title{
+            font-size: 15px;
+        }
+        svg {
+          font-size: 12px; // Decrease size of svg
+        }
+      }
+    }
+
+    .bottom_part {
+        .total{
+            font-size: 18px;
+        }
+      .status {
+        font-size: 10px; // Decrease font size for status
+
+        &.increase,
+        &.decrease {
+          padding: 4px; // Decrease padding for status
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) { // Additional breakpoint for smaller devices
+  .state_card_container {
+    padding: 10px; // Further decrease padding
+
+    .top_part {
+      .title_container {
+        .title{
+            font-size: 15px;
+        }
+        svg {
+          font-size: 12px; // Further decrease size of svg
+        }
+      }
+    }
+
+    .bottom_part {
+        .total{
+            font-size: 18px;
+        }
+      .status {
+        font-size: 8px; // Further decrease font size for status
+
+        &.increase,
+        &.decrease {
+          padding: 3px; // Further decrease padding for status
+        }
+      }
+    }
+  }
+}

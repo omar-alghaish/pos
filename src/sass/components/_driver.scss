@@ -1,0 +1,87 @@
+@import "../abstracts/colors";
+
+.driver-popover {
+  background-color: $light-bg-color !important;
+
+  // border: 1px solid $light-border;
+}
+
+.driver-popover-next-btn {
+  background-color: var(--light-primary-color) !important;
+  color: $dark-text-color !important;
+  text-shadow: none !important;
+  border: none !important;
+  transition: 0.3s !important;
+  &:hover {
+  }
+}
+
+.driver-popover-prev-btn {
+  background-color: transparent !important;
+  text-shadow: none !important;
+  color: var(--light-primary-color) !important;
+  border: 1px solid var(--light-primary-color) !important;
+  transition: 0.3s !important;
+  &:hover {
+    background-color: transparent !important;
+    // color: darken($light-primary-color,  10%) !important;
+    filter: brightness(90%);
+    // border-color: darken($light-primary-color,  10%) !important;
+  }
+}
+
+.driver-popover-navigation-btns {
+  gap: 10px;
+}
+
+.driver-popover-title {
+  // color: $dark-text;
+}
+
+.driver-popover-description {
+  // color: $dark-text;
+}
+
+.dark .driver-popover {
+  background-color: $dark-bg-color-paper !important;
+  color: white;
+  // border: 1px solid $dark-border;
+}
+
+.dark .driver-popover-arrow,
+.driver-popover-arrow-side-right,
+.driver-popover-arrow-align-start {
+  border-right-color: $dark-bg-color-paper !important;
+}
+.dark .driver-popover-arrow,
+.driver-popover-arrow-side-left,
+.driver-popover-arrow-align-start {
+  border-left-color: $dark-bg-color-paper !important;
+}
+
+.dark .driver-popover-next-btn {
+  background-color: var(--dark-primary-color) !important;
+  color: white;
+  text-shadow: none;
+
+  &:hover {
+    // background-color: darken($dark-primary-color,  10%) !important
+  }
+}
+.dark .driver-popover-prev-btn {
+  color: var(--dark-primary-color) !important;
+  border: 1px solid var(--dark-primary-color) !important;
+  &:hover {
+    background-color: transparent;
+    // color: darken($dark-primary-color,  10%) !important;
+    // border-color: darken($dark-primary-color,  10%);
+  }
+}
+
+.dark .driver-popover-title {
+  // color: $dark-text;
+}
+
+.dark .driver-popover-description {
+  // color: $dark-text;
+}

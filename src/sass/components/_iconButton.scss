@@ -1,0 +1,138 @@
+@import "../abstracts/colors";
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 20px;
+  height: 45px;
+  width: 45px;
+  // Light mode styles
+  &.contained {
+    background-color: $light-secondary-color ; // MUI Primary Color
+    color: $light-text-color;
+
+    &:hover {
+      background-color:  var(--light-primary-color);
+      color: $light-primary-color-text;
+    }
+  }
+
+  &.circle {
+    background-color: $light-secondary-color; // MUI Primary Color
+    color: $light-text-color;
+    border-radius: 50%;
+    &:hover {
+      background-color:  var(--light-primary-color);
+      color: $light-primary-color-text;
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid  var(--light-primary-color); // MUI Primary Border Color
+    color:  var(--light-primary-color);
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color:  var(--light-primary-color);
+
+    &:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+    }
+  }
+
+  // Dark mode styles
+}
+
+.dark .icon-button {
+  &.contained {
+    background-color:  var(--dark-primary-color); // MUI Primary Color for dark mode
+    color: $dark-primary-color-text;
+
+    &:hover {
+      background-color: #1e88e5; // Darker shade on hover
+    }
+  }
+
+  &.circle {
+    background-color: $dark-secondary-color; // Use appropriate color for dark mode
+    color: $dark-text-color;
+
+    &:hover {
+      background-color: var(--dark-primary-color);
+      color: $dark-primary-color-text;
+    }
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid  var(--dark-primary-color); // MUI Primary Border Color for dark mode
+    color:  var(--dark-primary-color);
+
+    &:hover {
+      background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color:  var(--dark-primary-color);
+
+    &:hover {
+      background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
+    }
+  }
+}
+
+
+
+// .dark .icon-button {
+//   &.contained {
+//     background-color: $dark-primary-color; // MUI Primary Color for dark mode
+//     color: $dark-primary-color-text;
+
+//     &:hover {
+//       background-color: #1e88e5; // Darker shade on hover
+//     }
+//   }
+
+//   &.circle {
+//     background-color: $dark-secondary-color; // Use appropriate color for dark mode
+//     color: $dark-text-color;
+
+//     &:hover {
+//       background-color: $dark-primary-color;
+//       color: $dark-primary-color-text;
+//     }
+//   }
+
+//   &.outlined {
+//     background-color: transparent;
+//     border: 1px solid $dark-primary-color; // MUI Primary Border Color for dark mode
+//     color: $dark-primary-color;
+
+//     &:hover {
+//       background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
+//     }
+//   }
+
+//   &.text {
+//     background-color: transparent;
+//     color: $dark-primary-color;
+
+//     &:hover {
+//       background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
+//     }
+//   }
+// }

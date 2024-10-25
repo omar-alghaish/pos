@@ -1,0 +1,172 @@
+@import "../abstracts/colors";
+
+
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  z-index: 99999999;
+  padding: 16px 24px;
+  opacity: 0;
+  background-color: $light-bg-color-paper;
+
+  &-success {
+    border-left: 4px solid $light-success-color;
+    color: $light-text-color;
+  }
+
+  &-warning {
+    border-left: 4px solid $light-warning-color;
+    color: $light-text-color;
+  }
+
+  &-error {
+    border-left: 4px solid $light-error-color;
+    color: $light-text-color;
+  }
+
+  &-info {
+    border-left: 4px solid $light-info-color;
+    color: $light-text-color;
+  }
+
+  &-message {
+    font-size: 14px;
+    font-weight: 400;
+    color: $light-text-color;
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+
+  .toast-actions {
+    display: flex;
+    gap: 10px;
+
+    button {
+    //   padding: 6px 16px;
+    //   border: none;
+    //   border-radius: 4px;
+    //   cursor: pointer;
+    //   font-size: 14px;
+    //   font-weight: 500;
+      transition: background-color 0.3s ease;
+
+      &.confirm-btn {
+        background-color:  var(--light-primary-color);
+        color: white;
+
+        &:hover {
+          background-color: darken($light-primary-color, 10%);
+        }
+      }
+
+      &.cancel-btn {
+        // background-color: $light-error-color;
+        color: $light-error-color;
+
+        &:hover {
+        //   color: darken($light-error-color, 10%);
+        }
+      }
+    }
+  }
+
+  // Dark theme styles
+  
+
+  // Animation for showing and hiding the toast
+  &.show {
+    animation: slideIn 0.5s forwards;
+  }
+
+  &.hide {
+    animation: slideOut 0.5s forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+}
+
+.toast-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999999;
+}
+
+
+.dark .toast {
+    background-color: $dark-bg-color-paper;
+
+    &-success {
+      background-color: $dark-success-color;
+      border-left: 4px solid $dark-success-color;
+      color: $dark-text-color;
+    }
+
+    &-warning {
+    //   background-color: $dark-warning-color;
+    background-color: rgba(255, 166, 0, 0.067);
+    backdrop-filter: blur(120px);
+      border: 1px solid $dark-warning-color;
+      color: $dark-warning-color !important;
+  
+    }
+
+    &-error {
+      background-color: $dark-error-color;
+      border-left: 4px solid $dark-error-color;
+      color: $dark-text-color;
+    }
+
+    &-info {
+      background-color: $dark-info-color;
+      border-left: 4px solid $dark-info-color;
+      color: $dark-text-color;
+    }
+
+    &-message {
+      color: $dark-text-color;
+    }
+
+    .toast-actions
+    button {
+
+      padding:5px 10px;
+      border-radius: 5px;
+
+      &.confirm-btn{
+        background-color: $dark-warning-color;
+      }
+    }
+  }

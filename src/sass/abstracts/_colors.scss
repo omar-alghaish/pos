@@ -1,0 +1,102 @@
+// // Global color variables for light theme
+
+// $light-text-color: #000000;        // White text on primary elements
+
+
+// $light-primary-color: #001eff;             // A bright blue for primary actions
+// $light-primary-color-text: #ffffff;        // White text on primary elements
+
+// $light-secondary-color: #f7f7f7;           // A subtle grey for secondary actions
+// $light-secondary-color-text: #60686f;      // White text on secondary elements
+
+// $light-bg-color-paper: #ffffff;                  // Light grey for the main background
+// $light-bg-color: #edf0f9;            // White for cards or paper-like surfaces
+
+// $light-error-color: #ff1744;
+// $light-warning-color: #ff9800;
+// $light-info-color: #2196f3;
+// $light-success-color: #4caf50;
+
+// // Global color variables for dark theme
+
+// $dark-text-color: #ffffff;        // White text on primary elements
+
+
+// $dark-primary-color: #3700ff;              // A light purple for primary actions
+// $dark-primary-color-text: #ffffff;         // Dark text for primary elements (on light purple)
+
+// $dark-secondary-color: #282828;            // A teal for secondary actions
+// $dark-secondary-color-text: #b7b4cb;       // Dark text on secondary elements
+
+// $dark-bg-color: #000000;                   // Very dark grey for the main background
+// $dark-bg-color-paper: #121217;             // Darker grey for cards or paper-like surfaces
+
+// $dark-error-color: #ff5252;
+// $dark-warning-color: #ffa726;
+// $dark-info-color: #64b5f6;
+// $dark-success-color: #81c784;
+
+
+// Light theme colors
+$light-text-color: #000000;
+$light-primary-color: #5d46de;
+$light-primary-color-text: #ffffff;
+$light-secondary-color: #f7f7f7;
+$light-secondary-color-text: #60686f;
+$light-bg-color-paper: #ffffff;
+$light-bg-color: #edf0f9;
+$light-error-color: #ff1744;
+$light-warning-color: #ff9800;
+$light-info-color: #2196f3;
+$light-success-color: #4caf50;
+
+// Dark theme colors
+$dark-text-color: #ffffff;
+$dark-primary-color: #465ade;
+$dark-primary-color-text: #ffffff;
+$dark-secondary-color: #282828;
+$dark-secondary-color-text: #b7b4cb;
+$dark-bg-color: #101010;
+$dark-bg-color-paper: #1a1a1a;
+// $dark-bg-color: #070024;
+// $dark-bg-color-paper: #1a1d29;
+
+
+$dark-error-color: #ff5252;
+$dark-warning-color: #ffa726;
+$dark-info-color: #64b5f6;
+$dark-success-color: #81c784;
+
+// :root {
+//     // Light theme
+//     --light-text-color: #000000;
+//     --light-primary-color: #5d46de;
+//     --light-primary-color-text: #ffffff;
+//     --light-secondary-color: #f7f7f7;
+//     --light-secondary-color-text: #60686f;
+//     --light-bg-color-paper: #ffffff;
+//     --light-bg-color: #edf0f9;
+//     --light-error-color: #ff1744;
+//     --light-warning-color: #ff9800;
+//     --light-info-color: #2196f3;
+//     --light-success-color: #4caf50;
+  
+//     // Dark theme
+//     --dark-text-color: #ffffff;
+//     --dark-primary-color: #465ade;
+//     --dark-primary-color-text: #ffffff;
+//     --dark-secondary-color: #282828;
+//     --dark-secondary-color-text: #b7b4cb;
+//     --dark-bg-color: #101010;
+//     --dark-bg-color-paper: #1a1a1a;
+//     --dark-error-color: #ff5252;
+//     --dark-warning-color: #ffa726;
+//     --dark-info-color: #64b5f6;
+//     --dark-success-color: #81c784;
+//   }
+  
+
+:root {
+    --light-primary-color: #{$light-primary-color};
+    --dark-primary-color: #{$dark-primary-color};
+  }

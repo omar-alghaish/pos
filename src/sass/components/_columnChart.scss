@@ -1,0 +1,25 @@
+.column_chart_container .header {
+  display: flex; // Align items in a row
+  justify-content: space-between; // Space items evenly
+  align-items: center; // Center align vertically
+  // margin-bottom: 15px; // Space between header and chart
+  padding: 0 20px;
+  width: 400px;
+  .legend-item {
+    display: flex; // Use flexbox for layout
+    align-items: center; // Center align items vertically
+    margin-right: 20px; // Space between legend items
+
+    .legend-marker {
+      width: 12px; // Set width for the marker
+      height: 12px; // Set height for the marker
+      border-radius: 50%; // Make the marker circular
+      margin-right: 5px; // Space between marker and label
+    }
+
+    .legend-label {
+      font-size: 12px; // Adjust font size for the label
+      color: #333; // Set your desired label color
+    }
+  }
+}

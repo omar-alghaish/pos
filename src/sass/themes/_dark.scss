@@ -1,0 +1,11 @@
+@import '../abstracts/colors';
+
+body.dark {
+  background-color: $dark-bg-color;
+  color: $dark-primary-color-text;
+
+  a {
+    color:  var(--dark-primary-color);
+    text-decoration: none;
+  }
+}

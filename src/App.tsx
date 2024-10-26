@@ -199,6 +199,8 @@ function App() {
             // You can also set other theme tokens here based on your application's needs
             colorBgBase: apperance.theme === "dark" ? "#1c1c1c" : "#ffffff", // Example background color
             colorTextBase: apperance.theme === "dark" ? "#ffffff" : "#000000", // Example text color
+            colorBgElevated: apperance.theme === 'dark' ? '#2a2a2a' : '#e6f7ff', // Using colorBgElevated
+
           },
         }}
       >

@@ -49,7 +49,7 @@ export interface IProduct {
   color: string;
 }
 
-const categories: ICategory[] = [
+export const categories: ICategory[] = [
   {
     id: "1",
     name: "eggs",

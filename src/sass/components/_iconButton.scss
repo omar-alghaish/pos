@@ -16,7 +16,9 @@
   &.contained {
     background-color: $light-secondary-color ; // MUI Primary Color
     color: $light-text-color;
-
+    &.error{
+      background-color: $light-error-color;
+    }
     &:hover {
       background-color:  var(--light-primary-color);
       color: $light-primary-color-text;
@@ -27,6 +29,9 @@
     background-color: $light-secondary-color; // MUI Primary Color
     color: $light-text-color;
     border-radius: 50%;
+    &.error{
+      background-color: $light-error-color;
+    }
     &:hover {
       background-color:  var(--light-primary-color);
       color: $light-primary-color-text;
@@ -37,7 +42,10 @@
     background-color: transparent;
     border: 1px solid  var(--light-primary-color); // MUI Primary Border Color
     color:  var(--light-primary-color);
-
+    &.error{
+      border: 1px solid $light-error-color;
+      color: $light-error-color
+    }
     &:hover {
       background-color: rgba(25, 118, 210, 0.1);
     }
@@ -46,7 +54,9 @@
   &.text {
     background-color: transparent;
     color:  var(--light-primary-color);
-
+    &.error{
+      color: $light-error-color;
+    }
     &:hover {
       background-color: rgba(25, 118, 210, 0.1);
     }
@@ -59,7 +69,9 @@
   &.contained {
     background-color:  var(--dark-primary-color); // MUI Primary Color for dark mode
     color: $dark-primary-color-text;
-
+&.error{
+  background-color: $dark-error-color;
+}
     &:hover {
       background-color: #1e88e5; // Darker shade on hover
     }
@@ -68,7 +80,9 @@
   &.circle {
     background-color: $dark-secondary-color; // Use appropriate color for dark mode
     color: $dark-text-color;
-
+    &.error{
+      background-color: $dark-error-color;
+    }
     &:hover {
       background-color: var(--dark-primary-color);
       color: $dark-primary-color-text;
@@ -79,7 +93,10 @@
     background-color: transparent;
     border: 1px solid  var(--dark-primary-color); // MUI Primary Border Color for dark mode
     color:  var(--dark-primary-color);
-
+    &.error{
+      border: 1px solid $dark-error-color;
+      color: $dark-error-color;
+    }
     &:hover {
       background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
     }
@@ -88,7 +105,9 @@
   &.text {
     background-color: transparent;
     color:  var(--dark-primary-color);
-
+    &.error{
+      color: $dark-error-color;
+    }
     &:hover {
       background-color: rgba(30, 136, 229, 0.1); // Dark mode hover effect
     }

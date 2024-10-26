@@ -1,23 +1,30 @@
-.filter_sidebar{
-    .filter_sidebar_container{
-        padding: 10px;
+.filter_sidebar {
+  .filter_sidebar_container {
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 100vh;
     overflow-y: scroll;
-    .filter_sidebar_content{
-        width: 100%;
+    position: relative;
+    .filter_sidebar_content {
+      width: 100%;
+    }
+    .filter-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      padding: 0 20px;
+      position: relative;
+    }
+  }
+}
 
-    }
-    .filter-section{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        width:100%;
-                padding:0 20px;
-
-    }
-    }
+.ant-select-dropdown {
+  z-index: 9999 !important;
+}
+.ant-picker-dropdown {
+  z-index: 9999 !important;
 }

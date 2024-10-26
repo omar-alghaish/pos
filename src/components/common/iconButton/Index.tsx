@@ -4,7 +4,8 @@ import React, { ButtonHTMLAttributes } from 'react';
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'contained' | 'outlined' | 'text' | 'circle'; // Define your button variants
   icon: React.ReactNode; // Icon component to be rendered
-  size?: string
+  size?: string;
+  color?: 'error'
 };
 
 const IconButton: React.FC<IconButtonProps> = ({
@@ -12,10 +13,11 @@ const IconButton: React.FC<IconButtonProps> = ({
   icon,
   className = '',
   size,
+  color,
   ...buttonProps // Collect all other button props
 }) => {
   // Determine class name based on variant and include any additional classes
-  const buttonClass = `icon-button ${variant} ${className}`.trim();
+  const buttonClass = `icon-button ${variant} ${className} ${color}`.trim();
 
   return (
     <button style={{fontSize: size}} className={buttonClass} {...buttonProps}>

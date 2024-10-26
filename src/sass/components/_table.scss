@@ -1,4 +1,4 @@
-// @import "../abstracts/colors";
+@import "../abstracts/colors";
 
 // .table_container {
 //   // padding: 10px;
@@ -394,7 +394,6 @@
 //   }
 // }
 
-
 .toast_table {
   position: fixed;
   bottom: 20px;
@@ -403,10 +402,34 @@
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 5px;
+  padding-right: 10px;
+  border-radius: 50px;
   font-size: 16px;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none; /* Keep this initially */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 11111;
+
+  // Add a transition for opacity
+  transition: opacity 0.5s ease;
+
+  // Add an active class for when the toast is visible
+  &.active {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction */
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+
+    button {
+      border-radius: 50px;
+      padding: 10px 15px;
+    }
+  }
 }
 
 
@@ -417,11 +440,70 @@
 
     .ant-table-cell {
       &.ellipsis {
-        white-space: nowrap;      // Prevent text from wrapping
-        overflow: hidden;         // Hide overflowing text
-        text-overflow: ellipsis;  // Add ellipsis for overflowing text
-        max-width: 100%;          // Prevent cell from exceeding width
+        white-space: nowrap; // Prevent text from wrapping
+        overflow: hidden; // Hide overflowing text
+        text-overflow: ellipsis; // Add ellipsis for overflowing text
+        max-width: 100%; // Prevent cell from exceeding width
       }
     }
   }
+}
+
+
+@media screen and (max-width: 800px) {
+  .toast_table {
+    position: fixed;
+    bottom: 20px;
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+   
+  
+    // Add an active class for when the toast is visible
+    &.active {
+      opacity: 1;
+      pointer-events: auto; /* Allow interaction */
+    }
+  .selected_message{
+    display: none;
+  }
+    .buttons {
+      display: flex;
+      gap: 15px;
+  background-color: #333;
+  border-radius: 50px;
+  padding: 10px;
+      button {
+        border-radius: 50px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+
+/* For Dark Theme */
+.ant-table-row-selected td {
+  background: #2a2a2a !important; /* Solid background color for selected row in dark theme */
+  color: #ffffff !important; /* Text color in selected row */
+  // display: none;
+}
+
+/* For Light Theme */
+.ant-table-row-selected.light td{
+  background-color: #e6f7ff !important; /* Solid background color for selected row in light theme */
+  color: #000000 !important; /* Text color in selected row */
+}
+
+/* Override the default background gradient */
+.ant-table-row:hover {
+  // background-color: transparent !important; /* Reset background color on hover */
+  // background-color: var(--light-primary-color);
 }

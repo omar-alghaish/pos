@@ -37,7 +37,9 @@ import TwoFactorAuth from "../pages/settings/pages/TwoFactorAuth";
 import Webhooks from "../pages/settings/pages/Webhooks";
 import ApiKeys from "../pages/settings/pages/ApiKeys";
 import BarcodePage from "../pages/barcodePage";
-import ProductsList from "../pages/products/indext";
+import ProductsLayout from "../pages/products/layouts/ProductsLayout";
+import ProductsList from "../pages/products/pages/ProductsTable";
+import AddProduct from "../pages/products/pages/AddProduct";
 
 interface Route {
   index?: boolean;
@@ -147,14 +149,14 @@ export const Links: Link[] = [
     icon: <BiStore />,
     children: [
       {
-        path: "/add-product",
+        path: "products/add-product",
         title: (
           <FormattedMessage id="addProduct" defaultMessage="Add New Product" />
         ),
         state: "add-product",
       },
       {
-        path: "/products",
+        path: "products/products-list",
         title: (
           <FormattedMessage id="productList" defaultMessage="Product List" />
         ),
@@ -417,17 +419,22 @@ const routes: Route[] = [
   },
   {
     path: "products",
-    element: <ProductsList />, // Parent Layout with Sidebar
+    element: <ProductsLayout />, // Parent Layout with Sidebar
     state:"products",
     children: [
-      // {
-      //   path: "", // Default behavior when navigating to /settings
-      //   element: <Navigate to="my-account" replace />, // Redirect to my-account
-      //   state: ""
-      // },
+      {
+        path: "", // Default behavior when navigating to /settings
+        element: <Navigate to="products-list" replace />, // Redirect to my-account
+        state: ""
+      },
+      {
+        path: "products-list",
+        element: <ProductsList />, // Parent route
+        state:"products-list",
+      },
       {
         path: "add-product",
-        element: <MyAccount />, // Parent route
+        element: <AddProduct />, // Parent route
         state:"add-product",
       },
     

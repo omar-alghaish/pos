@@ -2,6 +2,7 @@
 
 .button {
   display: flex;
+  gap: 5px;
   align-items: center;
   justify-content: center;
   border: none;
@@ -19,6 +20,9 @@
     color: $light-primary-color-text;
     &.secondary {
       background-color: $light-secondary-color-text;
+    }
+    &.error{
+      background-color: $light-error-color;
     }
     &:hover {
       filter: brightness(95%);
@@ -65,6 +69,9 @@
     color: $dark-primary-color-text;
     &.secondary {
       background-color: $dark-secondary-color-text;
+    }
+    &.error{
+      background-color: $dark-error-color;
     }
     &:hover {
       // background-color: darken($dark-primary-color, 5% );

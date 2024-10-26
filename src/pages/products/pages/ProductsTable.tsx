@@ -1,10 +1,10 @@
 // ProductsList.tsx
 import React from "react";
 
-import DataLayout from "../../components/layout/DataLayout";
+import DataLayout from "../../../components/layout/DataLayout";
 
 
-import Typography from "../../components/common/typography/Index";
+import Typography from "../../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
 import { SpaceContext } from "antd/lib/space";
 import { Button } from "antd";

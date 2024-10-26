@@ -5,7 +5,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'contained' | 'outlined' | 'text'; // Define your button variants
   children: React.ReactNode; // title component to be rendered
   size?: string
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'error';
   disabled?: boolean
 };
 

@@ -1,188 +1,285 @@
-@import "../abstracts/colors";
-.add_product_page {
-  display: flex;
-  gap: 20px;
+// @import "../abstracts/colors";
+// .add_product_page {
+//   display: flex;
+//   gap: 20px;
+//   padding: 20px;
+//   .left_sidebar {
+//     width: 400px;
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     .product_img {
+//       width: 100%;
+//       aspect-ratio: 4/3;
+//       background-color: $dark-bg-color-paper;
+//       border-radius: 10px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       position: relative;
+//       .delete_button {
+//         position: absolute;
+//         top: 20px;
+//         right: 20px;
+//       }
+//       .upload_button {
+//         display: inline-block;
+//         padding: 10px 20px;
+//         background-color: var(--dark-primary-color);
+//         color: white;
+//         border-radius: 50px;
+//         cursor: pointer;
+//         text-align: center;
+//       }
+//       .upload_button:hover {
+//         opacity: 0.8;
+//       }
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         border-radius: 10px;
+//       }
+//     }
+//     .bottom {
+//       display: flex;
+//       flex-direction: column;
+//       flex-grow: 1;
+//       gap: 10px;
+//     }
+//     .item {
+//       border-radius: 10px;
+//       width: 100%;
+//       // flex-grow: 1;
+//       height: 120px;
+//       background-color: $dark-bg-color-paper;
+//       padding: 10px;
+//       .item_input {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 10px;
+//         align-items: flex-start;
+//       }
+//     }
+//     .barcode {
+//       padding: 10px;
+//       border-radius: 10px;
+//       width: 100%;
+//       //   flex-grow: 1;
+//       background-color: $dark-bg-color-paper;
+//       .barcode_input {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//       }
+//     }
+//   }
+//   .right_side {
+//     flex-grow: 1;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+//   }
+//   .notes_options {
+//     display: flex;
+//     width: 100%;
+//     gap: 20px;
+//     flex-wrap: wrap;
+//     .notes_section,
+//     .options_section {
+//       flex-grow: 1;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       gap: 15px;
+//       background-color: $dark-bg-color-paper;
+//       border-radius: 10px;
+//       padding: 20px;
+//     }
+//     .item {
+//       display: flex;
+//       flex-direction: column;
+//       width: 100%;
+//       align-items: flex-start;
+//     }
+//     .note_item {
+//       display: flex;
+//       width: 100%;
+//       gap: 10px;
+//     }
+//     .option_item {
+//       width: 100%;
+//       display: flex;
+//       gap: 5px;
+//     }
+//   }
+//   .add_product_form {
+//     // flex-grow: 1;
+//     // height: 100vh;
+//     background-color: $dark-bg-color-paper;
+//     border-radius: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 20px;
+//     padding: 20px;
+//     display: grid;
+//     height: max-content;
+//     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+//     .input_item {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       width: 500px;
+//       gap: 15px;
+//       max-width: 100%;
+//       // background-color: red;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 800px) {
+//   .add_product_page {
+//     display: flex;
+//     gap: 10px;
+//     padding: 15px;
+//     flex-direction: column;
+//     .left_sidebar {
+//       width: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 10px;
+//       height: max-content;
+//       .product_img {
+//         width: 100%;
+//         aspect-ratio: 4/3;
+//         background-color: $dark-bg-color-paper;
+//         border-radius: 10px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         position: relative;
+//         .delete_button {
+//           position: absolute;
+//           top: 20px;
+//           right: 20px;
+//         }
+//         .upload_button {
+//         }
+//         .upload_button:hover {
+//         }
+//         img {
+//           width: 100%;
+//           height: 100%;
+//           object-fit: cover;
+//           border-radius: 10px;
+//         }
+//       }
+//       .bottom {
+//         display: flex;
+//         flex-direction: column;
+//         flex-grow: 1;
+//         gap: 10px;
+//       }
+//       .item {
+//         border-radius: 10px;
+//         width: 100%;
+//         //   flex-grow: 1;
+//         background-color: $dark-bg-color-paper;
+//         padding: 10px;
+//         .item_input {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 10px;
+//           align-items: flex-start;
+//         }
+//       }
+//       .barcode {
+//         padding: 10px;
+//         border-radius: 10px;
+//         width: 100%;
+//         //   flex-grow: 1;
+//         background-color: $dark-bg-color-paper;
+//         .barcode_input {
+//           display: flex;
+//           flex-direction: column;
+//           align-items: flex-start;
+//         }
+//       }
+//     }
+//     .add_product_form {
+//       flex-grow: 1;
+//       // height: 100vh;
+//       background-color: $dark-bg-color-paper;
+//       border-radius: 10px;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 10px;
+//       padding: 20px;
+//       .input_item {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         width: 500px;
+//         max-width: 100%;
+//         // background-color: red;
+//       }
+//     }
+//   }
+// }
+
+.add_product_form {
+  width: 600px;
+  margin: 0 auto;
+  max-width: 100%;
   padding: 20px;
-  .left_sidebar {
-    width: 400px;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .inputs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+  .notes_options {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .product_img {
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    .item{
       width: 100%;
-      aspect-ratio: 4/3;
-      background-color: $dark-bg-color-paper;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      .delete_button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-      .upload_button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: var(--dark-primary-color);
-        color: white;
-        border-radius: 50px;
-        cursor: pointer;
-        text-align: center;
-      }
-      .upload_button:hover {
-        opacity: .8;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-    }
-    .bottom {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      gap: 10px;
-    }
-    .item {
-      border-radius: 10px;
-      width: 100%;
-      //   flex-grow: 1;
-      background-color: $dark-bg-color-paper;
-      padding: 10px;
-      .item_input {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-      }
-    }
-    .barcode {
-      padding: 10px;
-      border-radius: 10px;
-      width: 100%;
-      //   flex-grow: 1;
-      background-color: $dark-bg-color-paper;
-      .barcode_input {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
     }
   }
-  .add_product_form {
+  
+  .notes_section {
     flex-grow: 1;
-    // height: 100vh;
-    background-color: $dark-bg-color-paper;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    .input_item {
+    align-items: flex-start;
+    width: 100%;
+    // gap: 10px;
+    .note_item {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 500px;
-      max-width: 100%;
-      // background-color: red;
+      gap: 10px;
+    }
+  }
+  .options_section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+ 
+    .option_item {
+      display: flex;
+      gap: 10px;
+      width: 100%;
     }
   }
 }
 
-@media screen and (max-width: 800px) {
-  .add_product_page {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    flex-direction: column;
-    .left_sidebar {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      height: max-content;
-      .product_img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        background-color: $dark-bg-color-paper;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        .delete_button {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-        }
-        .upload_button {
-
-        }
-        .upload_button:hover {
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-        }
-      }
-      .bottom {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        gap: 10px;
-      }
-      .item {
-        border-radius: 10px;
-        width: 100%;
-        //   flex-grow: 1;
-        background-color: $dark-bg-color-paper;
-        padding: 10px;
-        .item_input {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          align-items: flex-start;
-        }
-      }
-      .barcode {
-        padding: 10px;
-        border-radius: 10px;
-        width: 100%;
-        //   flex-grow: 1;
-        background-color: $dark-bg-color-paper;
-        .barcode_input {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    }
-    .add_product_form {
-      flex-grow: 1;
-      // height: 100vh;
-      background-color: $dark-bg-color-paper;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding: 20px;
-      .input_item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 500px;
-        max-width: 100%;
-        // background-color: red;
-      }
-    }
-  }
+.error_message {
+  color: red;
 }

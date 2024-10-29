@@ -1,0 +1,9 @@
+import { FormattedMessage } from 'react-intl'
+
+const translate = (id: string , value={}) => {
+  return (
+    <FormattedMessage id={id} values={{...value}}/>
+  )
+}
+
+export default translate

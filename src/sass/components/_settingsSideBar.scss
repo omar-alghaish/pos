@@ -1,0 +1,66 @@
+@import "../abstracts/colors";
+
+.settings_sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: $light-bg-color-paper;
+  height: 100vh;
+  // position: sticky;
+  // left: 0;
+  // bottom: 0;
+  z-index: 1111;
+  .links_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    .section_title{
+      color: $light-secondary-color-text;
+    }
+  }
+  .sidebar-item,
+  .sidebar-child-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .sidebar-item:hover,
+  .sidebar-child-item:hover {
+
+  }
+
+  .sidebar-children {
+    padding-left: 15px; 
+    width: 100%;
+  }
+
+  button {
+    padding: 5px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    // font-weight: 900;
+    font-size: 14px;
+    color: black !important;
+    &.active{
+      background-color: var(--light-primary-color);
+    }
+  }
+}
+
+.dark .settings_sidebar {
+  background-color: $dark-bg-color-paper;
+
+
+  button {
+
+    color: rgb(255, 255, 255) !important;
+    &.active{
+      background-color: var(--dark-primary-color);
+    }
+  }
+}

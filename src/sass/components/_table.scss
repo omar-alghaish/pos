@@ -1,0 +1,520 @@
+@import "../abstracts/colors";
+
+// .table_container {
+//   // padding: 10px;
+//   .ant-table {
+//     // Root container for the table
+//     background-color: transparent !important;
+
+//     .ant-table-container {
+//       // Container for the table body and header
+//       display: flex;
+//       flex-direction: column;
+//       gap: 5px;
+//       .ant-table-header {
+//         // Table header wrapper
+//         background-color: $light-bg-color-paper;
+//         border-radius: 5px;
+//         // height: 40px;
+//         .ant-table-thead {
+//           // Thead element
+//           tr {
+//             th {
+//               // Individual header cells
+//               height: max-content;
+//               font-size: 13px;
+//               padding-top: 8px;
+//               padding-bottom: 8px;
+//               border: none;
+//               opacity: 0.8;
+//               &::before {
+//                 display: none;
+//               }
+//               &:last-child {
+//                 &::before {
+//                   display: none !important;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .ant-table-body {
+//         // Table body wrapper
+//         .ant-table-tbody {
+//           tr {
+//             // Table row
+//             border-radius: 5px !important; // This won't work directly on tr
+//             overflow: hidden; // Add this to clip the corners
+//             td {
+//               // Table cell
+//               background-color: $light-bg-color-paper;
+//               border-bottom: 5px solid $light-bg-color;
+//               // padding: 10px; // Add padding for spacing
+//               &:first-child {
+//                 border-top-left-radius: 5px; // Round left corner
+//                 border-bottom-left-radius: 5px; // Round left corner
+//               }
+//               &:last-child {
+//                 border-top-right-radius: 5px; // Round right corner
+//                 border-bottom-right-radius: 5px; // Round right corner
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     // Scroll bar for table
+//     .ant-table-content {
+//       .ant-table-scroll {
+//         .ant-table-body-inner {
+//           // Scrollable area for table content
+//         }
+//       }
+//     }
+
+//     // Pagination block
+//     .ant-table-pagination {
+//       .ant-pagination {
+//         // Pagination wrapper
+
+//         .ant-pagination-item {
+//           // Pagination item
+//           a {
+//           }
+//         }
+
+//         .ant-pagination-item-active {
+//           // Active pagination item
+//           a {
+//           }
+//         }
+//         .ant-pagination-next,
+//         .ant-pagination-prev {
+//           // Next and previous buttons
+//         }
+//       }
+//     }
+
+//     // Loading state for the table
+//     .ant-table-placeholder {
+//       // Empty or loading message wrapper
+//     }
+//   }
+
+//   // For expandable rows
+//   .ant-table-row-expand-icon {
+//     // Expand icon
+//   }
+
+//   // For selected rows
+//   .ant-table-row-selected {
+//     // Selected row
+//   }
+
+//   // Fixed table header (sticky header)
+//   .ant-table-header-fixed {
+//     // Fixed header wrapper
+//   }
+
+//   // Table footer
+//   .ant-table-footer {
+//     // Footer container
+//   }
+
+//   // Loading spin indicator
+//   .ant-table-loading {
+//     .ant-spin {
+//       // Spin icon
+//     }
+//   }
+
+//   .ant-table-column-sorters {
+//     // Sorting indicator wrapper
+//     .ant-table-column-sorter {
+//       // Sorter icons wrapper
+//       .ant-table-column-sorter-up {
+//         // Sort ascending icon
+//       }
+//       .ant-table-column-sorter-down {
+//         // Sort descending icon
+//       }
+//     }
+//   }
+
+//   // Filter dropdown for table columns
+//   .ant-table-filter-column {
+//     // Column with filter dropdown
+//     .ant-dropdown-trigger {
+//       // Dropdown trigger for filters
+//     }
+//     .ant-table-filter-dropdown {
+//       // Dropdown menu for filters
+//     }
+//   }
+
+//   // Bordered tables
+//   .ant-table-bordered {
+//     // Table with borders
+
+//     .ant-table-container {
+//       // Bordered container
+//     }
+//   }
+
+//   // Size modifiers for tables
+//   .ant-table-small {
+//     // Smaller table size
+//   }
+
+//   .ant-table-middle {
+//     // Medium table size
+//   }
+
+//   // Draggable row styles (if enabled)
+//   .ant-table-row-draggable {
+//     // Draggable row
+//   }
+
+//   .ant-table-selection {
+//     // Table selection wrapper (for checkboxes)
+//     .ant-checkbox-wrapper {
+//       // Checkbox wrapper
+//       .ant-checkbox {
+//         // Checkbox control
+//       }
+//     }
+//   }
+
+//   // Selected rows highlight
+//   .ant-table-row-selected {
+//     // Selected row highlight
+//   }
+
+//   .ant-table-column-resize {
+//     // Column resize handler
+//   }
+
+//   // Responsive breakpoints
+//   .ant-table-xs, // Extra small
+// .ant-table-sm, // Small
+// .ant-table-md, // Medium
+// .ant-table-lg, // Large
+// .ant-table-xl  // Extra large
+//   {
+//     // Adjustments for various screen sizes
+//   }
+// }
+
+// .dark .table_container {
+//   .ant-table {
+//     // Root container for the table
+//     background-color: transparent !important;
+//     .ant-table-container {
+//       // Container for the table body and header
+
+//       .ant-table-header {
+//         // Table header wrapper
+//         background-color: transparent !important;
+
+//         .ant-table-thead {
+//           // Thead element
+
+//           tr {
+//             th {
+//               background-color: $dark-bg-color-paper !important;
+
+//               color: white !important;
+//             }
+//           }
+//         }
+//       }
+
+//       .ant-table-body {
+//         // Table body wrapper
+//         .ant-table-tbody {
+//           tr {
+//             // Table row
+//             border-radius: 10px !important; // This won't work directly on tr
+//             overflow: hidden; // Add this to clip the corners
+//             td {
+//               // Table cell
+//               background-color: $dark-bg-color-paper;
+//               border-bottom: 5px solid $dark-bg-color;
+//               &:first-child {
+//                 border-top-left-radius: 5px; // Round left corner
+//                 border-bottom-left-radius: 5px; // Round left corner
+//               }
+//               &:last-child {
+//                 border-top-right-radius: 5px; // Round right corner
+//                 border-bottom-right-radius: 5px; // Round right corner
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     // Scroll bar for table
+//     .ant-table-content {
+//       .ant-table-scroll {
+//         .ant-table-body-inner {
+//           // Scrollable area for table content
+//         }
+//       }
+//     }
+
+//     // Pagination block
+//     .ant-table-pagination {
+//       .ant-pagination {
+//         // Pagination wrapper
+
+//         .ant-pagination-item {
+//           // Pagination item
+//         }
+//         .ant-pagination-item-active {
+//           // Active pagination item
+//         }
+//         .ant-pagination-next,
+//         .ant-pagination-prev {
+//           // Next and previous buttons
+//         }
+//       }
+//     }
+
+//     // Loading state for the table
+//     .ant-table-placeholder {
+//       // Empty or loading message wrapper
+//     }
+//   }
+
+//   // For expandable rows
+//   .ant-table-row-expand-icon {
+//     // Expand icon
+//   }
+
+//   // For selected rows
+//   .ant-table-row-selected {
+//     // Selected row
+//   }
+
+//   // Fixed table header (sticky header)
+//   .ant-table-header-fixed {
+//     // Fixed header wrapper
+//   }
+
+//   // Table footer
+//   .ant-table-footer {
+//     // Footer container
+//   }
+
+//   // Loading spin indicator
+//   .ant-table-loading {
+//     .ant-spin {
+//       // Spin icon
+//     }
+//   }
+
+//   .ant-table-column-sorters {
+//     // Sorting indicator wrapper
+//     .ant-table-column-sorter {
+//       // Sorter icons wrapper
+//       .ant-table-column-sorter-up {
+//         // Sort ascending icon
+//       }
+//       .ant-table-column-sorter-down {
+//         // Sort descending icon
+//       }
+//     }
+//   }
+
+//   // Filter dropdown for table columns
+//   .ant-table-filter-column {
+//     // Column with filter dropdown
+//     .ant-dropdown-trigger {
+//       // Dropdown trigger for filters
+//     }
+//     .ant-table-filter-dropdown {
+//       // Dropdown menu for filters
+//     }
+//   }
+
+//   // Bordered tables
+//   .ant-table-bordered {
+//     // Table with borders
+
+//     .ant-table-container {
+//       // Bordered container
+//     }
+//   }
+
+//   // Size modifiers for tables
+//   .ant-table-small {
+//     // Smaller table size
+//   }
+
+//   .ant-table-middle {
+//     // Medium table size
+//   }
+
+//   // Draggable row styles (if enabled)
+//   .ant-table-row-draggable {
+//     // Draggable row
+//   }
+
+//   .ant-table-selection {
+//     // Table selection wrapper (for checkboxes)
+//     .ant-checkbox-wrapper {
+//       // Checkbox wrapper
+//       .ant-checkbox {
+//         // Checkbox control
+//       }
+//     }
+//   }
+
+//   // Selected rows highlight
+//   .ant-table-row-selected {
+//     // Selected row highlight
+//   }
+
+//   .ant-table-column-resize {
+//     // Column resize handler
+//   }
+
+//   // Responsive breakpoints
+//   .ant-table-xs, // Extra small
+// .ant-table-sm, // Small
+// .ant-table-md, // Medium
+// .ant-table-lg, // Large
+// .ant-table-xl  // Extra large
+//   {
+//     // Adjustments for various screen sizes
+//   }
+// }
+
+.toast_table {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  padding-right: 10px;
+  border-radius: 50px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none; /* Keep this initially */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 11111;
+
+  // Add a transition for opacity
+  transition: opacity 0.5s ease;
+
+  // Add an active class for when the toast is visible
+  &.active {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction */
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+
+    button {
+      border-radius: 50px;
+      padding: 10px 15px;
+    }
+  }
+}
+
+
+.table_container {
+  .ant-table {
+    width: 100%; // Set the table to take the full width of its container
+    
+    th {
+      // white-space: nowrap; // Prevent text wrapping
+      // max-width: 500px;   // Set a max width
+      // min-width: 100px;   // Set a min width to ensure it doesn't shrink too much
+      // overflow: hidden;    // Hide overflow if content is too long
+      // text-overflow: ellipsis; // Show ellipsis for overflow text
+      // padding: 0 10px; 
+      //      width: max-content;
+      width: 300px !important;
+    // Add padding for better appearance
+    }
+    .ant-table-cell {
+      
+      &.ellipsis {
+        white-space: nowrap; // Prevent text from wrapping
+        overflow: hidden; // Hide overflowing text
+        text-overflow: ellipsis; // Add ellipsis for overflowing text
+        // max-width: 100%; // Prevent cell from exceeding width
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .toast_table {
+    position: fixed;
+    bottom: 20px;
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+   
+  
+    // Add an active class for when the toast is visible
+    &.active {
+      opacity: 1;
+      pointer-events: auto; /* Allow interaction */
+    }
+  .selected_message{
+    display: none;
+  }
+    .buttons {
+      display: flex;
+      gap: 15px;
+  background-color: #333;
+  border-radius: 50px;
+  padding: 10px;
+      button {
+        border-radius: 50px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+
+/* For Dark Theme */
+.ant-table-row-selected td {
+  background: #2a2a2a !important; /* Solid background color for selected row in dark theme */
+  color: #ffffff !important; /* Text color in selected row */
+  // display: none;
+}
+
+/* For Light Theme */
+.ant-table-row-selected.light td{
+  background-color: #e6f7ff !important; /* Solid background color for selected row in light theme */
+  color: #000000 !important; /* Text color in selected row */
+}
+
+/* Override the default background gradient */
+.ant-table-row:hover {
+  // background-color: transparent !important; /* Reset background color on hover */
+  // background-color: var(--light-primary-color);
+}

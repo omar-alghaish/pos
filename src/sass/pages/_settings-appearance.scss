@@ -1,0 +1,145 @@
+@import "../abstracts/colors";
+.appearance_page {
+  display: flex;
+  flex-direction: column;
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    .section_title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .themes {
+      display: flex;
+      gap: 20px;
+      .theme_btn {
+        flex-grow: 1;
+        &.active {
+          button {
+            background-color: var(--light-primary-color);
+          }
+        }
+        button {
+          //   height: 150px;
+          //   width: 200px;
+          padding: 1px;
+          width: 100%;
+          aspect-ratio: 4/2.5;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 9px;
+          }
+        }
+      }
+    }
+    .brand_colors {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: 20px;
+      .brand_color {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .color_palette {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+  
+        .color_box {
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          border: 2px solid transparent;
+          transition: border 0.3s;
+          opacity: .2;
+  &.selected{
+    // border: 1px blue solid;
+    opacity: 1;
+  }
+          &:hover {
+            border: 2px solid #000;
+          }
+        }
+      }
+    }
+    &.update {
+      button {
+        width: 200px;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section {
+      .themes {
+        // flex-direction: column;
+        // background-color: red;
+      }
+      .brand_colors {
+        flex-direction: column;
+        .brand_color {
+                 align-items: flex-start;
+        }
+        .color_palette {
+
+    
+          .color_box {
+            &:hover {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark .appearance_page {
+  .section {
+    .section_title {
+    }
+    .themes {
+      .theme_btn {
+        &.active {
+          button {
+            background-color: var(--dark-primary-color);
+          }
+        }
+        button {
+          img {
+          }
+        }
+      }
+    }
+    .brand_colors {
+      .brand_color {
+      }
+    }
+    &.update {
+      button {
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .section {
+      .themes {
+        // flex-direction: column;
+        // background-color: red;
+      }
+      .brand_colors {
+        .brand_color {
+        }
+      }
+    }
+  }
+}
+

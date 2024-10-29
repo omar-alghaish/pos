@@ -1,0 +1,43 @@
+@import "../abstracts/colors";
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.custom-next,
+.custom-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--light-primary-color) !important;
+  color: white;
+  padding: 0 !important;
+  height: 30px;
+  width: 30px;
+  color: white !important;
+  z-index: 111;
+  display: block;
+}
+.custom-next {
+  right: 0;
+}
+.custom-prev {
+  left: 0;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  filter: brightness(90%);
+}
+
+.dark .custom-next,
+.custom-prev {
+  background-color: var(--dark-primary-color) !important;
+}
+
+@media screen and (max-width: 800px) {
+  .custom-next,
+  .custom-prev {
+    display: none;
+  }
+}

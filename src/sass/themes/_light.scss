@@ -1,0 +1,11 @@
+@import '../abstracts/colors';
+
+body.light {
+  background-color: $light-bg-color;
+  color: black;
+
+  a {
+    color:  var(--light-primary-color);
+    text-decoration: none;
+  }
+}

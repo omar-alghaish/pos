@@ -1,0 +1,157 @@
+@import "../abstracts/colors";
+
+.input-container {
+  position: relative;
+  margin: 8px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+    &.error {
+      color: $light-error-color; // Default to light theme color, change in dark theme
+    }
+  }
+
+  // Add the input-wrapper to handle prefix and input field together
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%; // Ensure wrapper is full width
+  }
+
+  .input-prefix {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    color: #ccc; // Default color for the icon
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px; // Add space for the prefix
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &.error {
+      border-color: $light-error-color; // Default to light theme color, change in dark theme
+    }
+
+    // Default outlined variant
+    border: 1px solid #ccc;
+
+    // Variants
+    &.filled {
+      border: none;
+      background-color: $light-secondary-color;
+
+      &:focus {
+        background-color: lighten($light-secondary-color, 5%);
+      }
+    }
+
+    &.standard {
+      border-radius: 0;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #ccc;
+
+      &:focus {
+        border-bottom: 2px solid var(--light-primary-color);
+      }
+    }
+
+    // Focus state
+    &:focus {
+      border-color: var(--light-primary-color);
+    }
+  }
+
+  .helper-text {
+    margin-top: 4px;
+    font-size: 12px;
+    color: $light-secondary-color-text; // Default to light theme color, change in dark theme
+
+    &.error {
+      color: $light-error-color; // Default to light theme color, change in dark theme
+    }
+  }
+}
+
+// Dark theme overrides
+.dark {
+  .input-container {
+    .label {
+      color: $dark-text-color; // Use dark theme text color
+
+      &.error {
+        color: $dark-error-color;
+      }
+    }
+
+    .input-wrapper {
+      .input-prefix {
+        color: $dark-secondary-color-text; // Dark theme prefix color
+      }
+    }
+
+    .input-field {
+      color: $dark-text-color;
+      background-color: transparent;
+
+      &.error {
+        border-color: $dark-error-color;
+      }
+
+      border: 1px solid $dark-secondary-color-text; // Dark theme outlined variant
+
+      &:focus {
+        border-color: var(--dark-primary-color);
+      }
+
+      &.filled {
+        background-color: $dark-secondary-color;
+        background-color: transparent;
+
+        &:focus {
+          background-color: lighten($dark-secondary-color, 5%);
+        }
+      }
+
+      &.standard {
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $dark-secondary-color-text;
+
+        &:focus {
+          border-bottom: 2px solid var(--dark-primary-color);
+        }
+      }
+    }
+
+    .helper-text {
+      color: $dark-secondary-color-text;
+
+      &.error {
+        color: $dark-error-color;
+      }
+    }
+  }
+}

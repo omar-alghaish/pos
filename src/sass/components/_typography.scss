@@ -1,0 +1,52 @@
+@import '../abstracts/colors'; // Import your color variables
+
+.typography {
+  margin: 0;
+  padding: 0;
+
+  // Define common text sizes and weights for different variants
+  &--h1 { font-size: 3rem; font-weight: 300; line-height: 1.2; }
+  &--h2 { font-size: 2.5rem; font-weight: 300; line-height: 1.3; }
+  &--h3 { font-size: 2rem; font-weight: 400; line-height: 1.4; }
+  &--h4 { font-size: 1.5rem; font-weight: 400; line-height: 1.4; }
+  &--h5 { font-size: 1.25rem; font-weight: 400; line-height: 1.5; }
+  &--h6 { font-size: 1rem; font-weight: 500; line-height: 1.6; }
+  &--subtitle1 { font-size: 1rem; font-weight: 400; line-height: 1.75; }
+  &--subtitle2 { font-size: 0.875rem; font-weight: 500; line-height: 1.57; }
+  &--body1 { font-size: 1rem; font-weight: 400; line-height: 1.5; }
+  &--body2 { font-size: 0.875rem; font-weight: 400; line-height: 1.43; }
+  &--caption { font-size: 0.75rem; font-weight: 400; line-height: 1.66; }
+  &--button { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; }
+  &--overline { font-size: 0.75rem; font-weight: 400; text-transform: uppercase; }
+
+  // Text color classes for light theme
+  &.color-default { color: $light-text-color; }
+  &.color-primary { color:  var(--light-primary-color); }
+  &.color-secondary { color: $light-secondary-color-text; }
+  &.color-error { color: $light-error-color; }
+  &.color-warning { color: $light-warning-color; }
+  &.color-info { color: $light-info-color; }
+  &.color-success { color: $light-success-color; }
+}
+
+// Dark theme styles
+.dark .typography {
+  // Text color classes for dark theme
+  &.color-default { color: $dark-text-color; }
+  &.color-primary { color:  var(--dark-primary-color); }
+  &.color-secondary { color: $dark-secondary-color-text; }
+  &.color-error { color: $dark-error-color; }
+  &.color-warning { color: $dark-warning-color; }
+  &.color-info { color: $dark-info-color; }
+  &.color-success { color: $dark-success-color; }
+}
+
+
+mark {
+  background-color:  var(--light-primary-color);
+  // color: white;
+  border-radius: 3px;
+  padding: 3px;
+
+  // backdrop-filter:;
+}

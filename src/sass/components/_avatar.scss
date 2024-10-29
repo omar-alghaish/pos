@@ -1,0 +1,48 @@
+@import '../abstracts//colors';
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; // Default circular style
+    overflow: hidden;
+    position: relative;
+  
+    &--default {
+      border: none; // Default variant has no border
+    }
+  
+    &--rounded {
+      border-radius: 12px; // Rounded corners variant
+      border: 2px solid transparent; // Transparent border
+    }
+  
+    &--outlined {
+      border-radius: 50%; // Circular shape for outlined variant
+      border: 2px solid var(--light-primary-color); // Color of the border
+    }
+  
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    &__initials {
+      font-size: 0.5em; // Adjust size based on avatar size
+      color: #fff; // Default text color for initials
+      text-transform: uppercase; // Uppercase initials
+    }
+  }
+  
+
+  .dark .avatar {
+  
+    &--outlined {
+      border: 2px solid var(--dark-primary-color); // Color of the border
+    }
+  
+    &__initials {
+      color: #fff; 
+    }
+  }

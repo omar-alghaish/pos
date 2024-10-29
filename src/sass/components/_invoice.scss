@@ -1,0 +1,47 @@
+@import '../abstracts/colors';
+.invoice_container{
+padding: 20px;
+display: flex;
+flex-direction: column;
+max-height: 500px;
+overflow-y: scroll;
+// gap: 10px;
+position: relative;
+    .section{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .line{
+            display: flex;
+            justify-content: space-between;
+        }
+        &.total{
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background-color: $light-bg-color-paper;
+        }
+
+        &.items{
+            flex-grow: 1;
+            overflow-y: scroll;
+                   }
+    }
+}
+
+.dark .invoice_container{
+
+        .section{
+
+            .line{
+
+            }
+            &.total{
+            
+                background-color: $dark-bg-color-paper;
+            }
+    
+            &.items{
+                       }
+        }
+    }

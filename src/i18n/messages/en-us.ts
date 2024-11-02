@@ -1,5 +1,5 @@
 import { LOCALES } from "../locales";
-
+//en-us.ts
 export default {
   [LOCALES.ENGLISH]: {
     hello: "Hello",

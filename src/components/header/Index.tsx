@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveModal } from "../../features/modal/modalSlice";
 import { RootState } from "../../app/store";
 import Search from "../common/searchBar/Index";
+import LanguageSelector from "../common/languageSelector";
 interface HeaderProps {
 searchBar?: boolean
 }
@@ -108,6 +109,8 @@ const Header: React.FC<HeaderProps> = ({searchBar= false}) => {
       <div className="search_component">
    {searchBar && <Search />  }      
       </div>
+
+      <LanguageSelector />
 
       <div className={`header ${isOpen ? "blurred" : ""}`}>
         <div ref={avatarRef}>

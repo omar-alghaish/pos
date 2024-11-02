@@ -8,6 +8,7 @@ interface ProviderProps {
   locale?: string;
 }
 
+
 const Provider: React.FC<ProviderProps> = ({ children, locale = LOCALES.ENGLISH }) => {
   return (
     <IntlProvider

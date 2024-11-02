@@ -44,8 +44,9 @@ function App() {
   }, [apperance]); // Update colors when apperance changes
 
   const currentLocale =
-    i18nInstance.language === "ar" ? LOCALES.ARABIC : LOCALES.ENGLISH;
+    i18nInstance.language 
   const isRTL = i18nInstance.language === LOCALES.ARABIC;
+  console.log('Messages for Current Locale:', messages[currentLocale]);
 
   // Helper function to recursively render routes with children
   const renderRoutes = (routes: any[]) => {

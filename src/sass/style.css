@@ -2837,6 +2837,17 @@ mark {
   padding: 8px; /* Adjust padding as needed */
 }
 
+/* LanguageSelector.css */
+.active-menu-item {
+  background-color: var(--light-primary-color) !important;
+  color: white !important;
+}
+
+.dark .active-menu-item {
+  background-color: var(--dark-primary-color) !important;
+  color: white !important;
+}
+
 .uploadFile {
   width: 100%;
   position: relative;

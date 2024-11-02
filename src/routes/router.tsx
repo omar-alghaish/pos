@@ -44,7 +44,6 @@ import CategoriesLayout from "../pages/categories/layout/CategoriesLayout";
 import CustomersLayout from "../pages/customers/layout/CustomersLayout";
 import CustomerList from "../pages/customers/pages/CustomersList";
 import AddCustomer from "../pages/customers/pages/AddCustomer";
-
 interface Route {
   index?: boolean;
   path?: string;

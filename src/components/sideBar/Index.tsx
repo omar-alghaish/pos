@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import SideBarContent from "./components/SideBarContent";
-import Button from "../common/button/Index";
 import { LOCALES } from "../../i18n";
 import i18n from "../../i18n/i18n";
 import { IoIosArrowBack } from "react-icons/io";
@@ -22,13 +21,9 @@ const SideBarContainer: React.FC<SideBarContainerProps> = ({
   const dispatch = useDispatch();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
-  const [locale, setLocale] = useState(i18n.language);
+  const [locale] = useState(i18n.language);
  
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang);
-    setLocale(lang);
-  };
 
   const toggleBar = () => {
     modal.activeModal === "sideBar"
@@ -103,16 +98,6 @@ const SideBarContainer: React.FC<SideBarContainerProps> = ({
         {/* <Button onClick={toggleTheme}>
           {theme === "light" ? "dark" : "light"} mode
         </Button> */}
-        <Button
-          onClick={() => {
-            locale === LOCALES.ENGLISH
-              ? handleLanguageChange(LOCALES.ARABIC)
-              : handleLanguageChange(LOCALES.ENGLISH);
-            window.location.reload();
-          }}
-        >
-          {locale === LOCALES.ENGLISH ? "ar" : "en"}
-        </Button>
       </div>
     </div>
   );

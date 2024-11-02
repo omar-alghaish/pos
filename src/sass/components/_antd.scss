@@ -4,3 +4,17 @@
   font-size: 16px; /* Optional: increase font size */
   padding: 8px; /* Adjust padding as needed */
 }
+
+
+/* LanguageSelector.css */
+.active-menu-item {
+  background-color: var(--light-primary-color) !important;
+  color: white !important;
+}
+
+
+.dark .active-menu-item{
+  background-color: var(--dark-primary-color) !important;
+  color: white !important;
+}
+

@@ -156,7 +156,6 @@ setImageSrc(values?.img || null)
   onChange={(value) => formik.setFieldValue("category", value)} // Correctly set the category value
   options={categoryOptions}
   label="Category"
-  name="category"
 />
 
         <InputField

@@ -1,4 +1,3 @@
-import Typography from "../../../components/common/typography/Index"
 import AddCategoryForm from "../components/AddCategoryForm"
 
 const AddCategory = () => {

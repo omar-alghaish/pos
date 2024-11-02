@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Switch } from "antd";
 import InputField from "../../../components/common/inputField";
 import DatePickerField from "../../../components/common/datePickerField";
 import Button from "../../../components/common/button/Index";

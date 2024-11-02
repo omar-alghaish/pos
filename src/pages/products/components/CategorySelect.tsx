@@ -7,7 +7,6 @@ interface CategorySelectProps {
   onChange: (value: string) => void;
   options: { label: string; value: string }[];
   label: string;
-  name:string
 }
 
 const CategorySelect: React.FC<CategorySelectProps> = ({
@@ -15,7 +14,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   onChange,
   options,
   label,
-  name
+  
 }) => {
   return (
     <div className="category item">

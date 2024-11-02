@@ -9,15 +9,6 @@ import SwitchButton from "../../../components/common/switchButton";
 import Typography from "../../../components/common/typography/Index";
 import { CustomerDataSourceItem } from "../pages/CustomersList";
 
-interface customerForm {
-  name: string;
-  address: string;
-  dateAdded: Date;
-  phoneNumber1: string;
-  phoneNumber2: string;
-  status: boolean;
-  visibility: boolean;
-}
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Category name is required"),

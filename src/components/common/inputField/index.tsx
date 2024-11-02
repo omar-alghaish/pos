@@ -9,7 +9,7 @@ type IInputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;
   type?: string;
   placeholder?: string;
-  name: string;
+  name?: string;
 };
 
 const InputField: React.FC<IInputFieldProps> = ({

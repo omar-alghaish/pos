@@ -6,7 +6,6 @@ import Typography from "../../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
 import { Button, Dropdown, Menu, Tag } from "antd";
 import {
-  FireOutlined,
   CloseCircleOutlined,
   CheckCircleOutlined,
 } from "@ant-design/icons"; // Icons for modern look

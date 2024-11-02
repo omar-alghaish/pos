@@ -1,7 +1,11 @@
+import Typography from "../../../components/common/typography/Index"
+import AddCategoryForm from "../components/AddCategoryForm"
+
 const AddCategory = () => {
   return (
     <div>
-      add category
+
+     <AddCategoryForm title="Add Category" type={"add"} />
     </div>
   )
 }

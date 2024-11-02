@@ -10,7 +10,7 @@ const SideBarContent: React.FC = () => {
 
   return (
     <div className="main">
-      <SideBarHeader title="Alphatek pos" />
+      <SideBarHeader title="Subsub pos" />
       <SideBarSection
         title="menu"
         links={Links}

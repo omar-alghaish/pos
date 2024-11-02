@@ -30,7 +30,7 @@ export interface DataSourceItem {
   avgProductRating?: number;
   dateCreated: string;
   lastUpdated: string;
-  status: "Active" | "Inactive";
+  status: boolean;
   visibility: boolean;
   totalSales: number;
   profitMargin: number;
@@ -61,7 +61,7 @@ const dataSource: DataSourceItem[] = [
     dateAdded: "2024-01-15",
     dateCreated: "2024-01-01",
     lastUpdated: "2024-01-20",
-    status: "Active",
+    status: true,
     visibility: true,
     description: "A high-quality wireless mouse with ergonomic design.",
   },
@@ -87,7 +87,7 @@ const dataSource: DataSourceItem[] = [
     dateAdded: "2024-01-10",
     dateCreated: "2024-01-02",
     lastUpdated: "2024-01-22",
-    status: "Inactive",
+    status: false,
     visibility: true,
     description:
       "A durable mechanical keyboard with customizable RGB lighting.",
@@ -112,7 +112,7 @@ const dataSource: DataSourceItem[] = [
     dateAdded: "2024-01-05",
     dateCreated: "2024-01-01",
     lastUpdated: "2024-01-15",
-    status: "Active",
+    status: true,
     visibility: true,
     description: "A compact USB-C hub with multiple ports for convenience.",
   },
@@ -137,7 +137,7 @@ const dataSource: DataSourceItem[] = [
     dateAdded: "2024-01-12",
     dateCreated: "2024-01-01",
     lastUpdated: "2024-01-18",
-    status: "Active",
+    status: true,
     visibility: true,
     description: "A high-speed HDMI cable for 4K resolution.",
   },
@@ -162,133 +162,12 @@ const dataSource: DataSourceItem[] = [
     dateAdded: "2024-01-08",
     dateCreated: "2024-01-01",
     lastUpdated: "2024-01-21",
-    status: "Active",
+    status: true,
     visibility: true,
     description:
       "Wireless earbuds with noise cancellation and long battery life.",
   },
-  {
-    key: "6",
-    productId: "P006",
-    img: img,
-
-    productName: "Gaming Monitor",
-    SKU: "GM-006",
-    barcode: "1234567890128",
-    category: "Electronics",
-    supplier: "MonitorMasters",
-    stockQuantity: 15,
-    price: 299.99,
-    discount: 25,
-    totalSales: 50,
-    profitMargin: 40.0,
-    lowStockAlert: true,
-    trending: false,
-    dateAdded: "2024-01-03",
-    dateCreated: "2024-01-01",
-    lastUpdated: "2024-01-19",
-    status: "Active",
-    visibility: true,
-    description:
-      "A high-resolution gaming monitor with a refresh rate of 144Hz.",
-  },
-  {
-    key: "7",
-    productId: "P007",
-    img: img,
-
-    productName: "Bluetooth Speaker",
-    SKU: "BS-007",
-    barcode: "1234567890129",
-    category: "Audio",
-    supplier: "AudioPros",
-    stockQuantity: 80,
-    price: 59.99,
-    discount: 10,
-    totalSales: 220,
-    profitMargin: 22.0,
-    lowStockAlert: false,
-    trending: true,
-    dateAdded: "2024-01-09",
-    dateCreated: "2024-01-01",
-    lastUpdated: "2024-01-20",
-    status: "Active",
-    visibility: true,
-    description:
-      "Portable Bluetooth speaker with deep bass and waterproof design.",
-  },
-  {
-    key: "8",
-    productId: "P008",
-    img: img,
-
-    productName: "Laptop Stand",
-    SKU: "LS-008",
-    barcode: "1234567890130",
-    category: "Accessories",
-    supplier: "OfficeGear",
-    stockQuantity: 60,
-    price: 29.99,
-    discount: 5,
-    totalSales: 130,
-    profitMargin: 20.0,
-    lowStockAlert: false,
-    trending: false,
-    dateAdded: "2024-01-07",
-    dateCreated: "2024-01-01",
-    lastUpdated: "2024-01-17",
-    status: "Active",
-    visibility: true,
-    description: "Adjustable laptop stand for better ergonomics.",
-  },
-  {
-    key: "9",
-    productId: "P009",
-    img: img,
-
-    productName: "Portable Charger",
-    SKU: "PC-009",
-    barcode: "1234567890131",
-    category: "Accessories",
-    supplier: "PowerSolutions",
-    stockQuantity: 90,
-    price: 24.99,
-    discount: 15,
-    totalSales: 250,
-    profitMargin: 18.0,
-    lowStockAlert: false,
-    trending: true,
-    dateAdded: "2024-01-06",
-    dateCreated: "2024-01-01",
-    lastUpdated: "2024-01-16",
-    status: "Active",
-    visibility: true,
-    description: "High-capacity portable charger for smartphones and tablets.",
-  },
-  {
-    key: "10",
-    productId: "P010",
-    img: img,
-
-    productName: "Smartwatch",
-    SKU: "SW-010",
-    barcode: "1234567890132",
-    category: "Wearables",
-    supplier: "SmartTech",
-    stockQuantity: 40,
-    price: 199.99,
-    discount: 20,
-    totalSales: 90,
-    profitMargin: 30.0,
-    lowStockAlert: true,
-    trending: false,
-    dateAdded: "2024-01-04",
-    dateCreated: "2024-01-01",
-    lastUpdated: "2024-01-14",
-    status: "Active",
-    visibility: true,
-    description: "Smartwatch with fitness tracking and notification alerts.",
-  },
+ 
 ];
 
 const ProductsList: React.FC = () => {
@@ -468,7 +347,7 @@ const ProductsList: React.FC = () => {
       dataIndex: "status",
       key: "status",
       render: (isActive) =>
-        isActive == "Active" ? (
+        isActive ? (
           <Tag icon={<CheckCircleOutlined />} color="success">
             Active
           </Tag>
@@ -690,7 +569,7 @@ const ProductsList: React.FC = () => {
         isOpen={isEditModalOpen}
         onClose={handleCloseEditModal}
       >
-        <AddProductForm  values={selectedRow} type="update"/>
+        <AddProductForm  values={selectedRow} type="update" title={""}/>
       </Modal>
     </>
   );

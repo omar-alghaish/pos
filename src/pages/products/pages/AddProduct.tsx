@@ -556,7 +556,7 @@
 //         label="Expiration Date"
 //         onChange={(date) => formik.setFieldValue("expirationDate", date)}
 //       />
-      
+
 //       <NotesSection
 //         notes={notes}
 //         onNoteChange={handleNoteChange}
@@ -578,15 +578,14 @@
 
 // export default AddProduct;
 
-
-import AddProductForm from '../components/AddProductForm'
+import AddProductForm from "../components/AddProductForm";
 
 const AddProduct = () => {
   return (
     <div>
-      <AddProductForm type='add' />
+      <AddProductForm title="Add Product" type="add" />
     </div>
-  )
-}
+  );
+};
 
-export default AddProduct
+export default AddProduct;

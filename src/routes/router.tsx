@@ -1,6 +1,5 @@
-// src/routes/router.ts
 import Home from "../pages/home/Index";
-// import path from "path";
+
 import { IoHomeOutline } from "react-icons/io5";
 import { HiUsers } from "react-icons/hi";
 import { PiStorefrontLight } from "react-icons/pi";
@@ -42,6 +41,9 @@ import AddProduct from "../pages/products/pages/AddProduct";
 import AddCategory from "../pages/categories/pages/AddCategory";
 import CategoriesList from "../pages/categories/pages/CategoriesList";
 import CategoriesLayout from "../pages/categories/layout/CategoriesLayout";
+import CustomersLayout from "../pages/customers/layout/CustomersLayout";
+import CustomerList from "../pages/customers/pages/CustomersList";
+import AddCustomer from "../pages/customers/pages/AddCustomer";
 
 interface Route {
   index?: boolean;
@@ -205,14 +207,14 @@ export const Links: Link[] = [
     icon: <HiUsers />,
     children: [
       {
-        path: "/add-customer",
+        path: "customers/add-customer",
         title: (
           <FormattedMessage id="addCustomer" defaultMessage="Add Customer" />
         ),
         state: "add-customer",
       },
       {
-        path: "/customer-list",
+        path: "customers/customer-list",
         title: (
           <FormattedMessage id="customerList" defaultMessage="Customer List" />
         ),
@@ -486,6 +488,28 @@ const routes: Route[] = [
         path: "add-category",
         element: <AddCategory />, // Parent route
         state: "add-category",
+      },
+    ],
+  },
+  {
+    path: "customers",
+    element: <CustomersLayout />, // Parent Layout with Sidebar
+    state: "customers",
+    children: [
+      {
+        path: "", // Default behavior when navigating to /settings
+        element: <Navigate to="customer-list" replace />, // Redirect to my-account
+        state: "",
+      },
+      {
+        path: "customer-list",
+        element: <CustomerList />, // Parent route
+        state: "customer-list",
+      },
+      {
+        path: "add-customer",
+        element: <AddCustomer />, // Parent route
+        state: "add-customer",
       },
     ],
   },

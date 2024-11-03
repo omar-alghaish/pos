@@ -1,12 +1,11 @@
 import Home from "../pages/home/Index";
 
-import { IoHomeOutline } from "react-icons/io5";
-import { HiUsers } from "react-icons/hi";
+import { IoHomeOutline, IoPersonAddOutline } from "react-icons/io5";
+import { HiUserGroup, HiUsers } from "react-icons/hi";
 import { PiStorefrontLight } from "react-icons/pi";
-import { TfiHelpAlt } from "react-icons/tfi";
+import { TfiDashboard, TfiHelpAlt } from "react-icons/tfi";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineDashboard } from "react-icons/md";
-import { BiStore } from "react-icons/bi";
+import { BiSolidCategoryAlt, BiStore } from "react-icons/bi";
 // import { GiReceiveMoney } from "react-icons/gi";
 import { AiOutlineStock } from "react-icons/ai";
 import Dashboard from "../pages/dashboard/Index";
@@ -24,6 +23,7 @@ import {
   FaLock,
   FaUserShield,
   FaTools,
+  FaUserTie,
   // FaKey,
 } from "react-icons/fa";
 import General from "../pages/settings/pages/General";
@@ -44,6 +44,12 @@ import CategoriesLayout from "../pages/categories/layout/CategoriesLayout";
 import CustomersLayout from "../pages/customers/layout/CustomersLayout";
 import CustomerList from "../pages/customers/pages/CustomersList";
 import AddCustomer from "../pages/customers/pages/AddCustomer";
+import AddEmployee from "../pages/employees/pages/AddEmployee";
+import EmployeesList from "../pages/employees/pages/EmployeesList";
+import EmployeesLayout from "../pages/employees/layout/EmployeessLayout";
+import RolesList from "../pages/employees/pages/RolesList";
+import AddRole from "../pages/employees/pages/AddRole";
+import { BsUpcScan } from "react-icons/bs";
 interface Route {
   index?: boolean;
   path?: string;
@@ -72,7 +78,8 @@ export const Links: Link[] = [
     path: "/dashboard",
     title: <FormattedMessage id="dashboard" defaultMessage="Dashboard" />,
     state: "dashboard",
-    icon: <MdOutlineDashboard />,
+    icon: <TfiDashboard />
+    ,
   },
   {
     path: "/pos",
@@ -112,7 +119,8 @@ export const Links: Link[] = [
       <FormattedMessage id="barcode-scanner" defaultMessage="barcode scanner" />
     ),
     state: "barcode-scanner",
-    icon: <MdOutlineDashboard />,
+    icon: <BsUpcScan />
+    ,
   },
   {
     path: "/inventory",
@@ -178,7 +186,8 @@ export const Links: Link[] = [
     path: "/categories",
     title: <FormattedMessage id="categories" defaultMessage="categories" />,
     state: "categories",
-    icon: <BiStore />,
+    icon: <BiSolidCategoryAlt />
+    ,
     children: [
       {
         path: "categories/add-category",
@@ -228,6 +237,42 @@ export const Links: Link[] = [
           />
         ),
         state: "loyalty-program",
+      },
+    ],
+  },
+  {
+    path: "/employees",
+    title: <FormattedMessage id="employees" defaultMessage="Employees" />,
+    state: "employees",
+    icon: <HiUserGroup />, // Icon for employees section
+    children: [
+      {
+        path: "/employees/employee-list",
+        title: (
+          <FormattedMessage id="employeeList" defaultMessage="Employee List" />
+        ),
+        state: "employee-list",
+        icon: <HiUserGroup />,
+      },
+      {
+        path: "/employees/add-employee",
+        title: (
+          <FormattedMessage id="addEmployee" defaultMessage="Add Employee" />
+        ),
+        state: "add-employee",
+        icon: <IoPersonAddOutline />,
+      },
+      {
+        path: "/employees/roles-list",
+        title: <FormattedMessage id="rolesList" defaultMessage="Roles" />,
+        state: "employee-roles-list",
+        icon: <FaUserTie />,
+      },
+      {
+        path: "/employees/add-role",
+        title: <FormattedMessage id="addRole" defaultMessage="Add role" />,
+        state: "add-role",
+        icon: <FaUserTie />,
       },
     ],
   },
@@ -509,6 +554,38 @@ const routes: Route[] = [
         path: "add-customer",
         element: <AddCustomer />, // Parent route
         state: "add-customer",
+      },
+    ],
+  },
+  {
+    path: "employees",
+    element: <EmployeesLayout />, // Parent layout for employees with possible sidebar
+    state: "employees",
+    children: [
+      {
+        path: "", // Default behavior when navigating to /employees
+        element: <Navigate to="employee-list" replace />, // Redirect to employee list
+        state: "",
+      },
+      {
+        path: "employee-list",
+        element: <EmployeesList />,
+        state: "employee-list",
+      },
+      {
+        path: "add-employee",
+        element: <AddEmployee />,
+        state: "add-employee",
+      },
+      {
+        path: "roles-list",
+        element: <RolesList />,
+        state: "employee-roles-list",
+      },
+      {
+        path: "add-role",
+        element: <AddRole />,
+        state: "employee-roles-list",
       },
     ],
   },

@@ -46,6 +46,7 @@ body {
   background-color: $light-bg-color-paper;
   z-index: 1111;
   border-radius: 10px;
+
   .search_component{
     height: 50px;
     flex-grow: 1;
@@ -53,7 +54,7 @@ body {
 }
 .header_container .header {
   background-color: $light-bg-color-paper; // Default background color
-  width: 90%;
+  // width: 90%;
   height: 60px;
   border-radius: 50px; // Rounded corners
   padding: 0 7px; // Horizontal padding
@@ -61,7 +62,7 @@ body {
   align-items: center;
   z-index: 111;
   position: relative;
-  display: none;
+  // display: none;
   &.blurred {
     z-index: 11111111;
   }
@@ -72,9 +73,9 @@ body {
   .dropdown {
     position: absolute; // Position it absolutely in relation to the header
     top: 70px; // Adjust to position under the header
-    left: 0;
+    right: 0;
     width: 300px; // Match header width
-    max-width: 100%;
+    // max-width: 100%;
     background-color: $light-bg-color-paper; // Use your desired background color
     border-radius: 20px; // Optional rounding
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional shadow for better visibility

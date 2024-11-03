@@ -3,6 +3,7 @@ import counterReducer from "../features/counter/counterSlice";
 import orderSlice from "../features/order/orderSlice";
 import modalSlice from "../features/modal/modalSlice";
 import settingsSlice from "../features/settings/settingsSlice";
+import globalLoadingSlice from "../features/globalLoading/globalLoadingSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     order: orderSlice,
     modal: modalSlice,
     settings: settingsSlice,
+    globalLoading: globalLoadingSlice,
   },
 });
 

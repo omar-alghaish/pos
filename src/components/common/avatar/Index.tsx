@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoPersonCircleSharp } from 'react-icons/io5';
 
 interface AvatarProps {
   onClick: () => void; // Corrected the type here
@@ -31,9 +32,10 @@ const Avatar: React.FC<AvatarProps> = ({
     >
       {src ? (
         <img className="avatar__image" src={src} alt={alt} />
-      ) : (
+      ) : initials ? (
         <span className="avatar__initials">{initials}</span>
-      )}
+      ) : <IoPersonCircleSharp />
+}
     </div>
   );
 };

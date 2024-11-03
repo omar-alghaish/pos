@@ -1,16 +1,3 @@
-// import React from 'react'
-// import Avatar from '../common/avatar/Index'
-
-// const Header = () => {
-//   return (
-//     <div className='header_container'>
-//             <Avatar src='https://c.pxhere.com/photos/08/7a/male_portrait_profile_social_media_cv_young_elegant_suit-459413.jpg!d' size='45px' initials="AB" backgroundColor="#007bff" variant="outlined" />
-
-//     </div>
-//   )
-// }
-
-// export default Header
 
 import React, { useState, useRef, useEffect } from "react";
 import Avatar from "../common/avatar/Index";
@@ -24,9 +11,9 @@ import { RootState } from "../../app/store";
 import Search from "../common/searchBar/Index";
 import LanguageSelector from "../common/languageSelector";
 interface HeaderProps {
-searchBar?: boolean
+  searchBar?: boolean;
 }
-const Header: React.FC<HeaderProps> = ({searchBar= false}) => {
+const Header: React.FC<HeaderProps> = ({ searchBar = false }) => {
   const { modal } = useSelector((state: RootState) => state);
 
   const dispatch = useDispatch();
@@ -106,9 +93,7 @@ const Header: React.FC<HeaderProps> = ({searchBar= false}) => {
         className="toggle"
         onClick={toggleBar}
       ></IconButton>
-      <div className="search_component">
-   {searchBar && <Search />  }      
-      </div>
+      <div className="search_component">{searchBar && <Search />}</div>
 
       <LanguageSelector />
 

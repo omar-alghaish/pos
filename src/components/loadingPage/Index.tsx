@@ -3,14 +3,24 @@ import Loading from "../common/loading/Index";
 import { FaRegCopyright } from "react-icons/fa"; // Import the copyright icon
 import Typography from "../common/typography/Index";
 
-const LoadingPage: React.FC<{ variant: "circular" | "dots" | "linear" }> = ({
-  variant,
+interface loadingPageProps {
+  isopen?: boolean;
+  variant?: "circular" | "dots" | "linear";
+  ignoreIsopen?:boolean
+}
+const LoadingPage: React.FC<loadingPageProps> = ({
+  variant = "linear",
+  isopen,
+  ignoreIsopen
 }) => {
   // Function to get the current year
   const getCurrentYear = () => new Date().getFullYear();
 
   return (
-    <div className="loading_page_container">
+    <div
+      className="loading_page_container"
+      style={{ display: isopen || ignoreIsopen ? "flex" : "none" }}
+    >
       <div className="header">
         <Loading variant={variant} />
       </div>

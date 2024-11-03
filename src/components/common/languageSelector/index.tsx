@@ -4,10 +4,13 @@ import { useTranslation } from "react-i18next";
 import { LOCALES } from "../../../i18n/locales";
 import { FaGlobe } from "react-icons/fa"; // Import relevant icons
 import Button from "../button/Index";
+import { useDispatch } from "react-redux";
+import { setGlobalLoading } from "../../../features/globalLoading/globalLoadingSlice";
 
 const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
   const [locale, setLocale] = useState(i18n.language);
+  const dispatch = useDispatch();
   const languages = [
     { key: LOCALES.ENGLISH, label: "English" },
     { key: LOCALES.ARABIC, label: "العربية" },
@@ -21,11 +24,15 @@ const LanguageSelector: React.FC = () => {
     { key: LOCALES.TURKISH, label: "Türkçe" },
     { key: LOCALES.CHINESE, label: "中文" },
   ];
-  
+
   const changeLanguage = (lang: string) => {
+    dispatch(setGlobalLoading(true));
     i18n.changeLanguage(lang);
     setLocale(lang);
-    window.location.reload();
+    setTimeout(() => {
+          dispatch(setGlobalLoading(false));
+
+    }, 1000);
   };
 
   const menu = (
@@ -41,7 +48,7 @@ const LanguageSelector: React.FC = () => {
         <Menu.Item
           key={key}
           onClick={() => changeLanguage(key)}
-          className={`menu-item ${locale === key ? 'active-menu-item' : ''}`} // Apply classes conditionally
+          className={`menu-item ${locale === key ? "active-menu-item" : ""}`} // Apply classes conditionally
         >
           {label}
         </Menu.Item>

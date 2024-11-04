@@ -2,18 +2,16 @@
 
 .side_bar_content {
   background-color: $light-bg-color-paper;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   max-width: 100%;
-  // position: absolute; // Change to absolute
   top: 0;
-  left: 0; // Ensure it starts from the left
-  // transform: translateX(-100%); // Initially off screen
+  left: 0;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: red;
+  padding-bottom: 20px;
   .main {
     height: max-content;
   }
@@ -30,8 +28,8 @@
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     &.parent_links_list {
       button {
         justify-content: space-between;
@@ -62,15 +60,15 @@
 
     &.child_links_list {
       width: 100%;
-      padding-left: 30px;
-      padding-right: 30px;
-
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 10px;
       button {
         display: flex;
         align-items: center;
         gap: 20px;
         justify-content: start;
-        width: 80%;
+        width: 100%;
         padding: 0 15px;
 
         a {
@@ -128,6 +126,8 @@
     }
 
     &.child_links_list {
+      a {
+      }
       button {
         .color {
           background-color: rgb(

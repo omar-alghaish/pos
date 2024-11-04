@@ -42,9 +42,9 @@ const MainLayout = () => {
         onClose={() => toggleBar()}
         variant="temporary"
         direction="left"
-        width="300"
+        width="300px"
       >
-        <SideBar  onClose={() => setBarOpen(false)} />
+        <SideBar onClose={() => setBarOpen(false)} />
       </Drawer>
       <Outlet />
     </div>

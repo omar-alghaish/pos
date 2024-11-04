@@ -45,7 +45,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rm -rf build && rm -rf dist"
-
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +68,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
-    "@types/classnames": "^2.3.0"
+    "@types/classnames": "^2.3.0",
+    "@types/react-world-flags": "^1.6.0"
   }
 }

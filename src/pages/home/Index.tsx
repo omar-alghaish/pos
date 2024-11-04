@@ -3,7 +3,6 @@ import Table from "../../components/common/table";
 import Header from "../../components/header/Index";
 import Typography from "../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
-import Drawer from "../../components/common/drawer";
 
 // Define the data type for your table
 interface DataSourceItem {
@@ -16,7 +15,6 @@ interface DataSourceItem {
 const Home = () => {
   // State to store the current date and time
   const [currentDateTime, setCurrentDateTime] = useState<string>("");
-  const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Function to update the current date and time
   const updateDateTime = () => {
@@ -94,7 +92,6 @@ const Home = () => {
   return (
     <div className="home_container">
       <Header />
-      <button onClick={() => setDrawerOpen(!drawerOpen)}>Toggle Drawer</button>
 
       <div
         className="content"
@@ -120,14 +117,7 @@ const Home = () => {
           <Typography variant="h6">Hello, Omar Alghaish</Typography>
           <Typography>{currentDateTime}</Typography>
         </div>
-        <Drawer
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        variant="temporary"  // Change to 'persistent' or 'permanent'
-        direction="right"     // Change to 'right', 'top', or 'bottom'
-      >
-        <div>Drawer Content Here</div>
-      </Drawer>
+      
         {/* Second Banner */}
         <div
           className="banner"

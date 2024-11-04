@@ -44,7 +44,7 @@
     padding: 10px;
     padding-left: 30px; // Add space for the prefix
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 8px;
     outline: none;
     box-sizing: border-box;
     transition: border-color 0.3s, background-color 0.3s;
@@ -54,7 +54,7 @@
     }
 
     // Default outlined variant
-    border: 1px solid #ccc;
+    border: 1px solid $light-bg-color-paper;
 
     // Variants
     &.filled {
@@ -64,6 +64,11 @@
       &:focus {
         background-color: lighten($light-secondary-color, 5%);
       }
+    }
+
+    &.circle{
+   
+      border-radius: 50px;
     }
 
     &.standard {
@@ -119,12 +124,15 @@
         border-color: $dark-error-color;
       }
 
-      border: 1px solid $dark-secondary-color-text; // Dark theme outlined variant
+      border: 2px solid $dark-secondary-color; // Dark theme outlined variant
 
       &:focus {
         border-color: var(--dark-primary-color);
       }
-
+      &.circle{
+   
+        border-radius: 50px;
+      }
       &.filled {
         background-color: $dark-secondary-color;
         background-color: transparent;

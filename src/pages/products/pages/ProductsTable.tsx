@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DataLayout from "../../../components/layout/DataLayout";
+import DataLayout from "../../../components/layout/dataLayout/DataLayout";
 import { ColumnsType } from "antd/lib/table";
 import { Dropdown, Menu, Tag } from "antd";
 import Button from "../../../components/common/button/Index";

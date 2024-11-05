@@ -1,0 +1,15 @@
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--gap);
+    max-width: 1200px; // Set the maximum width for the grid container
+    margin: 0 auto; // Center the grid container
+    // padding: 0 20px; // Optional: add padding for spacing on smaller screens
+  
+    .grid-item {
+        max-width: 250px; // Limit the maximum width of each grid item
+        width: 100%;
+      }
+  }
+  

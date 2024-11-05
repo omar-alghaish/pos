@@ -1,7 +1,7 @@
 // CategoriesList.tsx
 
 import { useState } from "react";
-import DataLayout from "../../../components/layout/DataLayout";
+import DataLayout from "../../../components/layout/dataLayout/DataLayout";
 import Typography from "../../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
 import { Button, Dropdown, Menu, Tag } from "antd";
@@ -11,7 +11,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import Modal from "../../../components/common/modal/Index";
 import AddCustomerForm from "../components/AddEmployeesForm";
 import Avatar from "../../../components/common/avatar/Index";
-
+import img from "../../../assets/imges/test.jpg"
 export interface EmpolyeeDataSourceItem {
   key: string;
   id: string;
@@ -28,6 +28,7 @@ export interface EmpolyeeDataSourceItem {
   role: string;
   age: string;
   gender: string;
+  img?:string;
 }
 
 const dataSource: EmpolyeeDataSourceItem[] = [
@@ -47,6 +48,7 @@ const dataSource: EmpolyeeDataSourceItem[] = [
     email: "12345834342342",
     age: "32",
     gender: "man",
+    img:img
   },
   {
     key: "2",
@@ -100,11 +102,11 @@ const EmployeesList = () => {
     },
     {
       title: "img",
-      dataIndex: "avatar",
-      key: "avatr",
-      render: (_: string) => (
+      dataIndex: "img",
+      key: "img",
+      render: (img: string) => (
         <Typography>
-          <Avatar onClick={function (): void {}} />
+          <Avatar src={img} onClick={function (): void {}} />
         </Typography>
       ),
     },
@@ -285,6 +287,7 @@ const EmployeesList = () => {
         columns={columns}
         dataSource={dataSource}
         showSidebar={true}
+        allowViewMode={true}
       />
       <Modal
         isOpen={isaddressModalVisible}

@@ -1,6 +1,6 @@
 
 import  { useState } from "react";
-import DataLayout from "../../../components/layout/DataLayout";
+import DataLayout from "../../../components/layout/dataLayout/DataLayout";
 import Typography from "../../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
 import { Button, Dropdown, Menu, Tag } from "antd";

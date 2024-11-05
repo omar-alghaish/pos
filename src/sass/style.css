@@ -2998,6 +2998,118 @@ mark {
   background-color: #1a1a1a;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--gap);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.grid-container .grid-item {
+  max-width: 250px;
+  width: 100%;
+}
+
+:root {
+  --light-text-color: #000000;
+  --light-primary-color: #5d46de;
+  --light-primary-color-text: #ffffff;
+  --light-secondary-color: #f7f7f7;
+  --light-secondary-color-text: #60686f;
+  --light-bg-color-paper: #ffffff;
+  --light-bg-color: #edf0f9;
+  --light-error-color: #ff1744;
+  --light-warning-color: #ff9800;
+  --light-info-color: #2196f3;
+  --light-success-color: #4caf50;
+  --dark-text-color: #ffffff;
+  --dark-primary-color: #465ade;
+  --dark-primary-color-text: #ffffff;
+  --dark-secondary-color: #282828;
+  --dark-secondary-color-text: #b7b4cb;
+  --dark-bg-color: #101010;
+  --dark-bg-color-paper: #1a1a1a;
+  --dark-error-color: #ff5252;
+  --dark-warning-color: #ffa726;
+  --dark-info-color: #64b5f6;
+  --dark-success-color: #81c784;
+}
+
+:root {
+  --light-primary-color: #5d46de;
+  --dark-primary-color: #465ade;
+}
+
+.card {
+  border-radius: 8px;
+  transition: box-shadow 0.3s, border 0.3s;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: var(--padding, 10px);
+}
+.card.filled {
+  background-color: #f5f5f5;
+}
+.card.outlined {
+  border: 1px solid #d0d0d0;
+  box-shadow: none;
+}
+.card.elevated {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card.elevation-1 {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card.elevation-2 {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+.card.elevation-3 {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+.card .card-image {
+  width: 100%;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+}
+.card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card .card-content {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.card .card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.dark .card {
+  background-color: #1a1a1a;
+}
+.dark .card.filled {
+  background-color: #1a1a1a;
+}
+.dark .card.outlined {
+  border: 1px solid #d0d0d0;
+  box-shadow: none;
+}
+.dark .card.elevated {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dark .card.elevation-1 {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dark .card.elevation-2 {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+.dark .card.elevation-3 {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
 :root {
   --light-text-color: #000000;
   --light-primary-color: #5d46de;
@@ -3741,7 +3853,7 @@ body.light a {
   display: flex;
   gap: 10px;
 }
-.data_layout_container .main_content .data_table .header .buttons button {
+.data_layout_container .main_content .data_table .header .buttons .filter_button, .data_layout_container .main_content .data_table .header .buttons .add_button {
   display: flex;
   gap: 10px;
   width: -moz-max-content;

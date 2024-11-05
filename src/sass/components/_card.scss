@@ -1,0 +1,116 @@
+@import "../abstracts/colors";
+.card {
+  border-radius: 8px;
+  transition: box-shadow 0.3s, border 0.3s;
+  background-color: $light-bg-color-paper;
+  overflow: hidden;
+
+  // Default padding applied for all variants
+  padding: var(--padding, 10px);
+
+  // Variants
+  &.filled {
+    background-color: #f5f5f5;
+  }
+
+  &.outlined {
+    border: 1px solid #d0d0d0;
+    box-shadow: none;
+  }
+
+  &.elevated {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  // Elevation levels for elevated variant
+  &.elevation-1 {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  &.elevation-2 {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  &.elevation-3 {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Content elements
+  .card-image {
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+    // height: auto;
+    border-radius: 5px;
+    // border-bottom: 1px solid #e0e0e0;
+    // img{
+    //     width: 50%;
+    //     height: 50%;
+    // }
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .card-content {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
+
+.dark .card {
+
+  background-color: $dark-bg-color-paper;
+
+  // Default padding applied for all variants
+
+  // Variants
+  &.filled {
+    background-color: $dark-bg-color-paper;
+  }
+
+  &.outlined {
+    border: 1px solid #d0d0d0;
+    box-shadow: none;
+  }
+
+  &.elevated {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  // Elevation levels for elevated variant
+  &.elevation-1 {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  &.elevation-2 {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  &.elevation-3 {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Content elements
+  .card-image {
+
+    // border-bottom: 1px solid #e0e0e0;
+  }
+
+  .card-title {
+
+  }
+
+  .card-content {
+
+  }
+
+  .card-actions {
+
+  }
+}

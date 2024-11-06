@@ -36,7 +36,7 @@ const SideBarLinkItem: React.FC<SideBarLinkItemProps> = ({
   arrowRefs,
   onClick
 }) => {
-  const { modal } = useSelector((state: RootState) => state);
+  const modal = useSelector((state: RootState) => state.modal);
 
   const toggleChildren = (index: number) => {
     if (expandedIndex === index) {

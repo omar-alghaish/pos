@@ -9,7 +9,7 @@ import { setGlobalLoading } from "../../../features/globalLoading/globalLoadingS
 
 const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
-  const [locale, setLocale] = useState(i18n.language);
+  const [locale, setLocale] = useState(i18n.language || LOCALES.ENGLISH);
   const dispatch = useDispatch();
 
   const languages = [
@@ -28,13 +28,12 @@ const LanguageSelector: React.FC = () => {
 
   const changeLanguage = (lang: string) => {
     dispatch(setGlobalLoading(true));
-    i18n.changeLanguage(lang);
+    // i18n.changeLanguage(lang);
     setLocale(lang);
     setTimeout(() => {
       dispatch(setGlobalLoading(false));
     }, 1000);
   };
-
   const getCurrentLanguage = () => {
     return languages.find(language => language.key === locale);
   };

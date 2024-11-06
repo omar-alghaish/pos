@@ -2605,6 +2605,9 @@ mark {
   align-items: center;
   justify-content: center;
 }
+.loading_page_container .logo img {
+  width: 200px;
+}
 .loading_page_container .alphatek_logo {
   display: flex;
   align-items: center;

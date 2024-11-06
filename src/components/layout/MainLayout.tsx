@@ -8,7 +8,7 @@ import Drawer from "../common/drawer";
 import { setActiveModal } from "../../features/modal/modalSlice";
 
 const MainLayout = () => {
-  const { modal } = useSelector((state: RootState) => state);
+  const modal = useSelector((state: RootState) => state.modal);
   const [barOpen, setBarOpen] = useState(false);
   const { globalLoadingStatus } = useSelector(
     (state: RootState) => state.globalLoading

@@ -2,7 +2,7 @@ import React from "react";
 import Loading from "../common/loading/Index";
 import { FaRegCopyright } from "react-icons/fa"; // Import the copyright icon
 import Typography from "../common/typography/Index";
-
+import logo from "/icons/pos-no-bg.png"
 interface loadingPageProps {
   isopen?: boolean;
   variant?: "circular" | "dots" | "linear";
@@ -25,12 +25,13 @@ const LoadingPage: React.FC<loadingPageProps> = ({
         <Loading variant={variant} />
       </div>
       <div className="logo">
-        <Typography variant="h1">Alrahma</Typography>
+        {/* <Typography variant="h1">Alrahma</Typography> */}
+       <img src={logo} alt=""  />
       </div>
       <div className="alphatek_logo" style={{ textAlign: "center" }}>
-        <Typography variant="body1" color="secondary">
+        {/* <Typography variant="body1" color="secondary">
           powered by
-        </Typography>
+        </Typography> */}
         <Typography>subsub</Typography>
         <span>
           <Typography>

@@ -14,7 +14,7 @@ interface HeaderProps {
   searchBar?: boolean;
 }
 const Header: React.FC<HeaderProps> = ({ searchBar = false }) => {
-  const { modal } = useSelector((state: RootState) => state);
+  const modal = useSelector((state: RootState) => state.modal);
 
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);

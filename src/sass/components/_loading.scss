@@ -69,6 +69,39 @@
       }
     }
   }
+
+  .dark .loading-container {
+    &.circular {
+      .circular-spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid var(--dark-primary-color);
+      }
+    }
+  
+    &.linear {
+  background-color: rgb(56, 56, 56);
+      .linear-spinner {
+        background-color: rgba(0, 0, 0, 0.1);
+        &::before {
+          background-color: var(--dark-primary-color);
+        }
+      }
+    }
+  
+    &.dots {
+      .dots-spinner {
+        .dot {
+          background-color: var(--dark-primary-color);  
+          &:nth-child(1) {
+          }
+          &:nth-child(2) {
+          }
+          &:nth-child(3) {
+          }
+        }
+      }
+    }
+  }
   
   @keyframes spin {
     0% {

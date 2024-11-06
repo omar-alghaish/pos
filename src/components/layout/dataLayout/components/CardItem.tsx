@@ -7,8 +7,8 @@ import Typography from '../../../common/typography/Index';
 
 interface CardItemProps {
   item: any;
-  onClick: () => void;
-  menu: React.ReactElement | undefined; // Corrected type
+  onClick?: () => void;
+  menu?: React.ReactElement | undefined; // Corrected type
   truncateString: (str: string, maxLength: number) => string;
 }
 

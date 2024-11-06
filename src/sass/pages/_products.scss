@@ -19,13 +19,16 @@
       width: 100%;
       // height: 100vh;
       background-color: $dark-bg-color-paper;
-     margin: 0;
+      margin: 0;
     }
     .page_content {
       flex-grow: 1;
       width: 800px;
       max-width: 100%;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .data_table {
@@ -33,6 +36,7 @@
       flex-direction: column;
       gap: 20px;
       width: 100%;
+      max-width: 1200px;
 
       .header {
         display: flex;
@@ -41,7 +45,7 @@
         padding: 10px;
         border-radius: 5px;
         gap: 20px;
-
+        background-color: $light-bg-color-paper;
         .title {
           display: flex;
           align-items: center;
@@ -57,7 +61,8 @@
           // width: max-content;
           gap: 10px;
 
-          .filter_button, .add_button {
+          .filter_button,
+          .add_button {
             display: flex;
             gap: 10px;
             width: max-content;
@@ -69,6 +74,7 @@
       }
     }
   }
+
   @media screen and (max-width: 800px) {
     .page_content {
       padding: 0 10px !important;
@@ -79,14 +85,14 @@
     .header {
       flex-direction: column;
       align-items: flex-start;
-      background-color: transparent;
+      background-color: transparent !important;
       justify-content: center;
       padding: 0 !important;
       gap: 10px !important;
       .title {
         width: 100%;
-        background-color: $dark-bg-color-paper;
-        padding:0 10px;
+        background-color: $light-bg-color-paper;
+        padding: 0 10px;
         border-radius: 5px;
         .search {
           flex-grow: 1;
@@ -94,10 +100,70 @@
       }
       .buttons {
         width: 100%;
-        background-color: $dark-bg-color-paper;
+        background-color: $light-bg-color-paper;
         padding: 10px;
         border-radius: 5px;
       }
     }
+  }
+}
+
+.dark .data_layout_container {
+  .main_content {
+    .products_layout {
+      display: flex;
+    }
+
+    .filter_sidebar_container {
+      background-color: $dark-bg-color-paper;
+    }
+    .page_content {
+    }
+
+    .data_table {
+      .header {
+        background-color: $dark-bg-color-paper;
+        .title {
+        }
+
+        .search {
+          // Add styles here if needed
+        }
+
+        .buttons {
+          .filter_button,
+          .add_button {
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .page_content {
+    }
+    .data_table {
+      gap: 10px !important;
+    }
+    .header {
+      background-color: transparent !important;
+      .title {
+        background-color: $dark-bg-color-paper;
+
+        .search {
+        }
+      }
+      .buttons {
+        background-color: $dark-bg-color-paper;
+      }
+    }
+  }
+}
+.breadcrumb_layout_container{
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  @media screen and (max-width:800px) {
+    padding:0 10px;
   }
 }

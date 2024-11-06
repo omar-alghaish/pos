@@ -58,7 +58,8 @@
     // Drawer is closed by default, opens with overlay
   }
   &.persistent {
-    transform: translateX(0); // Default open for persistent
+    transform: translateX(0);
+    // position: relative;
     + .content {
       margin-left: 250px;
       transition: margin 0.3s ease;
@@ -117,3 +118,5 @@
   &.permanent {
   }
 }
+
+// .rtl 

@@ -3,7 +3,7 @@ import Table from "../../components/common/table";
 import Header from "../../components/header/Index";
 import Typography from "../../components/common/typography/Index";
 import { ColumnsType } from "antd/lib/table";
-import InstallPWAButton from "../../components/installPWAButton";
+// import InstallPWAButton from "../../components/installPWAButton";
 
 // Define the data type for your table
 interface DataSourceItem {
@@ -138,7 +138,7 @@ const Home = () => {
           <Typography variant="subtitle2">Save 20% on all orders this weekend!</Typography>
           <Typography variant="body2" >Tip of the Day: Use the inventory management feature for efficiency!</Typography>
         </div>
-<InstallPWAButton />
+{/* <InstallPWAButton /> */}
         {/* Table */}
         <Table
           columns={columns}

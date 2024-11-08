@@ -37,6 +37,7 @@ const MainLayout = () => {
   return (
     <div className="main_layout_container">
       {<LoadingPage variant={"linear"} isopen={globalLoadingStatus} />}
+      {/* <TabsBar /> */}
       <Drawer
         open={modal.activeModal === "sideBar" ? true : false}
         onClose={() => toggleBar()}

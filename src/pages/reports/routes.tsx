@@ -5,6 +5,8 @@ import ReportsLayout from "./layouts/ReportsLayout";
 import { Navigate } from "react-router-dom";
 import SalesReports from "./pages/SalesReports";
 import InventoryReports from "./pages/InventoryReports";
+import ClientsReports from "./pages/ClientsReports";
+import PurchasesReports from "./pages/PurchasesReports";
 
 export const reportsLinks: Link = {
   path: "/reports",
@@ -29,6 +31,31 @@ export const reportsLinks: Link = {
       ),
       state: "inventory-reports",
     },
+    {
+      path: "/reports/clients-reports",
+      title: (
+        <FormattedMessage
+          id="clientsReports"
+          defaultMessage="Clients Reports"
+        />
+      ),
+      state: "clients-reports",
+    },
+    {
+      path: "/reports/Purchases-reports",
+      title: (
+        <FormattedMessage
+          id="PurchasesReports"
+          defaultMessage="Purchases Reports"
+        />
+      ),
+      state: "purchases-reports",
+    },
+    {
+      path: "/reports/system-logs",
+      title: <FormattedMessage id="systemLogs" defaultMessage="System Logs" />,
+      state: "system-logs",
+    },
   ],
 };
 
@@ -52,6 +79,21 @@ export const reportsRoutes: Route = {
       path: "inventory-reports",
       element: <InventoryReports />,
       state: "inventory-reports",
+    },
+    {
+      path: "clients-reports",
+      element: <ClientsReports />,
+      state: "clients-reports",
+    },
+    {
+      path: "purchases-reports",
+      element: <PurchasesReports />,
+      state: "purchases-reports",
+    },
+    {
+      path: "system-logs",
+      element: <InventoryReports />,
+      state: "system-logs",
     },
   ],
 };

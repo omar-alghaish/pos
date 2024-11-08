@@ -9,6 +9,8 @@ import { FaUserTie } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { HiUserGroup } from "react-icons/hi";
+import PosSessions from "./pages/PosSessions";
+import Shifts from "./pages/Shifts";
 
 export const employeesLinks: Link = {
   path: "/employees",
@@ -44,6 +46,20 @@ export const employeesLinks: Link = {
       state: "add-role",
       icon: <FaUserTie />,
     },
+    {
+      path: "/employees/pos-sessions",
+      title: (
+        <FormattedMessage id="posSessions" defaultMessage="Pos Sessions" />
+      ),
+      state: "employee-pos-sessions",
+      icon: <FaUserTie />,
+    },
+    {
+      path: "/employees/shifts",
+      title: <FormattedMessage id="shifts" defaultMessage="Shifts" />,
+      state: "shifts",
+      icon: <FaUserTie />,
+    },
   ],
 };
 
@@ -76,6 +92,16 @@ export const employeesRoutes: Route = {
       path: "add-role",
       element: <AddRole />,
       state: "employee-roles-list",
+    },
+    {
+      path: "pos-sessions",
+      element: <PosSessions />,
+      state: "pos-sessions",
+    },
+    {
+      path: "shifts",
+      element: <Shifts />,
+      state: "shifts",
     },
   ],
 };

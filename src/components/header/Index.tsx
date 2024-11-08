@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import Avatar from "../common/avatar/Index";
 import { gsap } from "gsap";
@@ -10,6 +9,7 @@ import { setActiveModal } from "../../features/modal/modalSlice";
 import { RootState } from "../../app/store";
 import Search from "../common/searchBar/Index";
 import LanguageSelector from "../common/languageSelector";
+import { FaBell } from "react-icons/fa";
 interface HeaderProps {
   searchBar?: boolean;
 }
@@ -94,9 +94,8 @@ const Header: React.FC<HeaderProps> = ({ searchBar = false }) => {
         onClick={toggleBar}
       ></IconButton>
       <div className="search_component">{searchBar && <Search />}</div>
-
+      <IconButton icon={<FaBell />} />
       <LanguageSelector />
-
       <div className={`header ${isOpen ? "blurred" : ""}`}>
         <div ref={avatarRef}>
           <Avatar

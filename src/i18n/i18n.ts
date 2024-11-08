@@ -33,13 +33,23 @@ i18n
   .use(initReactI18next) // Initializes react-i18next
   .init({
     resources,
-    fallbackLng: 'en',
+    lng: 'en', // Explicitly set fallback language
+    fallbackLng: 'en', // Set fallback to English
     interpolation: {
       escapeValue: false, // React already handles escaping
     },
+    react: {
+      useSuspense: false, // Disable suspense to avoid render blocking
+    },
   });
 
-export default i18n;
+i18n.on('languageChanged', (lng) => {
+  console.log('Language changed to:', lng); // Log language change
+});
 
 console.log('Available Languages:', Object.keys(resources));
 console.log('Current Language:', i18n.language);
+
+console.log('i18n initialized:', i18n.isInitialized);  // Should log true if i18n is initialized correctly
+
+export default i18n;

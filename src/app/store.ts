@@ -3,6 +3,8 @@ import counterReducer from "../features/counter/counterSlice";
 import orderSlice from "../features/order/orderSlice";
 import modalSlice from "../features/modal/modalSlice";
 import settingsSlice from "../features/settings/settingsSlice";
+import tabsSlice from "../features/tab/tabSlice";
+
 import globalLoadingSlice from "../features/globalLoading/globalLoadingSlice";
 
 export const store = configureStore({
@@ -12,6 +14,7 @@ export const store = configureStore({
     modal: modalSlice,
     settings: settingsSlice,
     globalLoading: globalLoadingSlice,
+tabs: tabsSlice
   },
 });
 

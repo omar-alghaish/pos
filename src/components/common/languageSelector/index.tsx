@@ -11,7 +11,6 @@ const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
   const [locale, setLocale] = useState(i18n.language || LOCALES.ENGLISH);
   const dispatch = useDispatch();
-
   const languages = [
     { key: LOCALES.ENGLISH, label: "English", countryCode: "GB" },
     { key: LOCALES.ARABIC, label: "العربية", countryCode: "SA" },
@@ -28,7 +27,7 @@ const LanguageSelector: React.FC = () => {
 
   const changeLanguage = (lang: string) => {
     dispatch(setGlobalLoading(true));
-    // i18n.changeLanguage(lang);
+    i18n.changeLanguage(lang);
     setLocale(lang);
     setTimeout(() => {
       dispatch(setGlobalLoading(false));
@@ -39,7 +38,7 @@ const LanguageSelector: React.FC = () => {
   };
 
   const currentLanguage = getCurrentLanguage();
-
+console.log(i18n)
   const menu = (
     <Menu
       style={{

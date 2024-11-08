@@ -5,6 +5,7 @@ import OrdersList from "./pages/OrdersList";
 import SalesLayout from "./layout/SalesLayout";
 import { FormattedMessage } from "react-intl";
 import { BsCart4 } from "react-icons/bs";
+import RecurringInvoices from "./pages/RecurringInvoices";
 
 export const salesLinks: Link = {
   path: "/sales",
@@ -14,17 +15,25 @@ export const salesLinks: Link = {
   children: [
     {
       path: "sales/orders-list",
-      title: (
-        <FormattedMessage id="ordersList" defaultMessage="Orders List" />
-      ),
+      title: <FormattedMessage id="ordersList" defaultMessage="Orders List" />,
       state: "orders-list",
     },
     {
-      path: "sales/add-order",
+      path: "sales/create-invoice",
       title: (
-        <FormattedMessage id="addOrder" defaultMessage="Add New Order" />
+        <FormattedMessage id="CreateInvoice" defaultMessage="Create Invoice" />
       ),
-      state: "add-order",
+      state: "create-invoice",
+    },
+    {
+      path: "sales/recurring-invoice",
+      title: (
+        <FormattedMessage
+          id="CreateInvoice"
+          defaultMessage="Recurring Invoice"
+        />
+      ),
+      state: "recurring-invoice",
     },
   ],
 };
@@ -49,6 +58,10 @@ export const salesRoutes: Route = {
       element: <AddOrder />,
       state: "add-order",
     },
-
+    {
+      path: "recurring-invoice",
+      element: <RecurringInvoices />,
+      state: "recurring-invoice",
+    },
   ],
 };

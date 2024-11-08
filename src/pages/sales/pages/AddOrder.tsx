@@ -1,6 +1,6 @@
 import AddOrderForm from "../components/AddOrderForm"
 
-const AddOrder = () => {
+const CreateInvoice = () => {
   return (
     <div>
 
@@ -9,4 +9,4 @@ const AddOrder = () => {
   )
 }
 
-export default AddOrder
+export default CreateInvoice

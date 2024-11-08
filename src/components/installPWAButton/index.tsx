@@ -12,22 +12,24 @@ const InstallPWAButton: React.FC = () => {
   const [isInstallable, setIsInstallable] = useState(false);
 
   useEffect(() => {
-    // Listen for the `beforeinstallprompt` event
     const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
+      console.log('beforeinstallprompt event fired'); // Log when the event fires
+      e.preventDefault(); // Prevent automatic prompt
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      setIsInstallable(true); // Show the install button
+      setIsInstallable(true); // Set state to show the install button
     };
 
+    // Listen for the `beforeinstallprompt` event
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
     return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
   }, []);
 
-  // Trigger the install prompt
   const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt(); // Show the install prompt
+    if (!deferredPrompt) return; // Ensure deferredPrompt is not null
+
+    console.log('beforeinstallprompt event triggered'); // Log when the prompt is triggered
+    await deferredPrompt.prompt(); // Show the install prompt
 
     const choiceResult = await deferredPrompt.userChoice;
     if (choiceResult.outcome === 'accepted') {
@@ -43,7 +45,7 @@ const InstallPWAButton: React.FC = () => {
   return (
     <>
       {isInstallable && (
-        <Button variant='contained' onClick={handleInstallClick} style={{ padding: '10px', fontSize: '16px' }}>
+        <Button variant="contained" onClick={handleInstallClick} style={{ padding: '10px', fontSize: '16px' }}>
           Install App
         </Button>
       )}

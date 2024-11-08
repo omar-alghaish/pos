@@ -12,11 +12,13 @@ import LoadingPage from "./components/loadingPage/Index";
 import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
 import { RootState } from "./app/store";
+import './i18n/i18n'; // Ensure this is at the top
 
 function App() {
   const { i18n: i18nInstance } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
   const { apperance } = useSelector((state: RootState) => state.settings);
+
 
   useEffect(() => {
     const currentLang = i18nInstance.language;
@@ -25,6 +27,7 @@ function App() {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+
   }, [i18nInstance.language]);
 
   useEffect(() => {

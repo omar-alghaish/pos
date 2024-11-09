@@ -5,6 +5,7 @@ import AddCustomer from "./pages/AddCustomer";
 import CustomerList from "./pages/CustomersList";
 import { Navigate } from "react-router-dom";
 import CustomersLayout from "./layout/CustomersLayout";
+import LoyaltyProgarm from "./pages/LoyaltyProgarm";
 
 export const customersLinks: Link = {
   path: "/customers",
@@ -27,7 +28,7 @@ export const customersLinks: Link = {
       state: "customer-list",
     },
     {
-      path: "/loyalty-program",
+      path: "customers/loyalty-program",
       title: (
         <FormattedMessage
           id="loyaltyProgram"
@@ -40,7 +41,7 @@ export const customersLinks: Link = {
 };
 
 export const customersRoutes: Route = {
-  path: "customers",
+  path: "/:lang/customers",
   element: <CustomersLayout />,
   state: "customers",
   children: [
@@ -58,6 +59,11 @@ export const customersRoutes: Route = {
       path: "add-customer",
       element: <AddCustomer />,
       state: "add-customer",
+    },
+    {
+      path: "loyalty-program",
+      element: <LoyaltyProgarm />,
+      state: "loyalty-program",
     },
   ],
 };

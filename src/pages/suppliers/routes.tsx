@@ -30,7 +30,7 @@ export const suppliersLinks: Link = {
 };
 
 export const suppliersRoutes: Route = {
-  path: "suppliers",
+  path: "/:lang/suppliers",
   element: <SuppliersLayout />,
   state: "suppliers",
   children: [

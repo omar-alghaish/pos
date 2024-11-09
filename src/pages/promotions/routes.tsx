@@ -30,7 +30,7 @@ export const promotionsLinks: Link = {
 };
 
 export const promotionsRoutes: Route = {
-  path: "promotions",
+  path: "/:lang/promotions",
   element: <PromotionsLayout />,
   state: "promotions",
   children: [

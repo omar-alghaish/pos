@@ -13,13 +13,13 @@ import PosSessions from "./pages/PosSessions";
 import Shifts from "./pages/Shifts";
 
 export const employeesLinks: Link = {
-  path: "/employees",
+  path: "employees",
   title: <FormattedMessage id="employees" defaultMessage="Employees" />,
   state: "employees",
   icon: <HiUserGroup />,
   children: [
     {
-      path: "/employees/employee-list",
+      path: "employees/employee-list",
       title: (
         <FormattedMessage id="employeeList" defaultMessage="Employee List" />
       ),
@@ -27,7 +27,7 @@ export const employeesLinks: Link = {
       icon: <HiUserGroup />,
     },
     {
-      path: "/employees/add-employee",
+      path: "employees/add-employee",
       title: (
         <FormattedMessage id="addEmployee" defaultMessage="Add Employee" />
       ),
@@ -35,19 +35,19 @@ export const employeesLinks: Link = {
       icon: <IoPersonAddOutline />,
     },
     {
-      path: "/employees/roles-list",
+      path: "employees/roles-list",
       title: <FormattedMessage id="rolesList" defaultMessage="Roles" />,
       state: "employee-roles-list",
       icon: <FaUserTie />,
     },
     {
-      path: "/employees/add-role",
+      path: "employees/add-role",
       title: <FormattedMessage id="addRole" defaultMessage="Add role" />,
       state: "add-role",
       icon: <FaUserTie />,
     },
     {
-      path: "/employees/pos-sessions",
+      path: "employees/pos-sessions",
       title: (
         <FormattedMessage id="posSessions" defaultMessage="Pos Sessions" />
       ),
@@ -55,7 +55,7 @@ export const employeesLinks: Link = {
       icon: <FaUserTie />,
     },
     {
-      path: "/employees/shifts",
+      path: "employees/shifts",
       title: <FormattedMessage id="shifts" defaultMessage="Shifts" />,
       state: "shifts",
       icon: <FaUserTie />,
@@ -64,7 +64,7 @@ export const employeesLinks: Link = {
 };
 
 export const employeesRoutes: Route = {
-  path: "employees",
+  path: "/:lang/employees",
   element: <EmployeesLayout />,
   state: "employees",
   children: [

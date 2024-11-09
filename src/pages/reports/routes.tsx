@@ -9,20 +9,20 @@ import ClientsReports from "./pages/ClientsReports";
 import PurchasesReports from "./pages/PurchasesReports";
 
 export const reportsLinks: Link = {
-  path: "/reports",
+  path: "reports",
   title: <FormattedMessage id="reports" defaultMessage="Reports" />,
   state: "reports",
   icon: <FaClipboardList />,
   children: [
     {
-      path: "/reports/sales-reports",
+      path: "reports/sales-reports",
       title: (
         <FormattedMessage id="salesReports" defaultMessage="Sales Reports" />
       ),
       state: "sales-reports",
     },
     {
-      path: "/reports/inventory-reports",
+      path: "reports/inventory-reports",
       title: (
         <FormattedMessage
           id="inventoryReports"
@@ -32,7 +32,7 @@ export const reportsLinks: Link = {
       state: "inventory-reports",
     },
     {
-      path: "/reports/clients-reports",
+      path: "reports/clients-reports",
       title: (
         <FormattedMessage
           id="clientsReports"
@@ -42,7 +42,7 @@ export const reportsLinks: Link = {
       state: "clients-reports",
     },
     {
-      path: "/reports/Purchases-reports",
+      path: "reports/Purchases-reports",
       title: (
         <FormattedMessage
           id="PurchasesReports"
@@ -52,7 +52,7 @@ export const reportsLinks: Link = {
       state: "purchases-reports",
     },
     {
-      path: "/reports/system-logs",
+      path: "reports/system-logs",
       title: <FormattedMessage id="systemLogs" defaultMessage="System Logs" />,
       state: "system-logs",
     },
@@ -60,7 +60,7 @@ export const reportsLinks: Link = {
 };
 
 export const reportsRoutes: Route = {
-  path: "reports",
+  path: "/:lang/reports",
   element: <ReportsLayout />,
   state: "employees",
   children: [

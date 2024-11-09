@@ -33,7 +33,6 @@ const MainLayout = () => {
       document.body.style.overflow = "auto"; // Restore scroll
     };
   }, [barOpen]);
-  console.log(globalLoadingStatus);
   return (
     <div className="main_layout_container">
       {<LoadingPage variant={"linear"} isopen={globalLoadingStatus} />}

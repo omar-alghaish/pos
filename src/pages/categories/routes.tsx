@@ -30,7 +30,7 @@ export const categoriesLinks: Link = {
 };
 
 export const categoriesRoutes: Route = {
-  path: "categories",
+  path: "/:lang/categories",
   element: <CategoriesLayout />,
   state: "categories",
   children: [

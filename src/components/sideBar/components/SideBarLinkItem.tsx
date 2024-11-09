@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Button from "../../common/button/Index";
 import { RiArrowDownWideLine } from "react-icons/ri";
 import { gsap } from "gsap";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../../app/store";
 
 interface LinkChild {
@@ -34,10 +34,10 @@ const SideBarLinkItem: React.FC<SideBarLinkItemProps> = ({
   expandedIndex,
   setExpandedIndex,
   arrowRefs,
-  onClick
+  onClick,
 }) => {
   const modal = useSelector((state: RootState) => state.modal);
-
+  const { lang } = useParams();
   const toggleChildren = (index: number) => {
     if (expandedIndex === index) {
       // Collapse the current children
@@ -96,10 +96,16 @@ const SideBarLinkItem: React.FC<SideBarLinkItemProps> = ({
     <li>
       <Button
         variant="text"
-        className={`${expandedIndex === linkIndex || modal.activePage === link.state ? "active" : ""}`}
+        className={`${
+          expandedIndex === linkIndex || modal.activePage === link.state
+            ? "active"
+            : ""
+        }`}
         onClick={handleParentClick} // Use the new handler
       >
-        <Link to={!link.children ? link.path : "#"}> {/* Use '#' to prevent navigation if there are children */}
+        <Link to={!link.children ? `/${lang}/${link.path}` : "#"}>
+          {" "}
+          {/* Use '#' to prevent navigation if there are children */}
           {link.icon}
           {link.title}
         </Link>
@@ -122,7 +128,7 @@ const SideBarLinkItem: React.FC<SideBarLinkItemProps> = ({
         >
           {link.children.map((childLink: LinkChild, childIndex) => (
             <Button key={childIndex} variant="text">
-              <Link to={childLink.path} onClick={onClick}> {/* Navigate when clicking child links */}
+              <Link to={`/${lang}/${childLink.path}`} onClick={onClick}>
                 <div
                   className="color"
                   style={{

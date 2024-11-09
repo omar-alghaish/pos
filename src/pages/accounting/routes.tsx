@@ -53,7 +53,7 @@ export const accountingLinks: Link = {
 };
 
 export const accountingRoutes: Route = {
-  path: "accounting",
+  path: "/:lang/accounting",
   element: <AccountingLayout />,
   state: "accounting",
   children: [

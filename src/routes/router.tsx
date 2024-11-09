@@ -54,13 +54,13 @@ export const Links: Link[] = [
 
 export const otherLinks: Link[] = [
   {
-    path: "/settings",
+    path: "settings",
     title: <FormattedMessage id="settings" defaultMessage="Settings" />,
     state: "settings",
     icon: <IoSettingsOutline />,
   },
   {
-    path: "/help",
+    path: "help",
     title: <FormattedMessage id="help" defaultMessage="Help" />,
     state: "help",
     icon: <TfiHelpAlt />,

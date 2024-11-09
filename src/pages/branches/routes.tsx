@@ -28,7 +28,7 @@ export const branchesLinks: Link = {
 };
 
 export const branchesRoutes: Route = {
-  path: "branches",
+  path: "/:lang/branches",
   element: <BranchLayout />,
   state: "branches",
   children: [

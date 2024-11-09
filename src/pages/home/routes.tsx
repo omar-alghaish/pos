@@ -4,7 +4,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import Home from "./Index";
 
 export const homeLinks: Link = {
-  path: "/",
+  path: "home",
   title: <FormattedMessage id="home" defaultMessage="Home" />,
   state: "home",
   icon: <IoHomeOutline />,
@@ -12,6 +12,7 @@ export const homeLinks: Link = {
 
 export const homeRoutes: Route = {
   index: true,
+  path: "/:lang/home",  // Use dynamic `:lang` in path
   element: <Home />,
   state: "home",
 };

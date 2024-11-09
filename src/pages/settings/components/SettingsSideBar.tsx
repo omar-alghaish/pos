@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../app/store";
 import {  useRef } from "react";
 // import { useTheme } from "../../../hooks/useTheme";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link, useParams } from "react-router-dom"; // Import Link for navigation
 import { settingsLinks } from "../../../routes/router";
 import Button from "../../../components/common/button/Index";
 import Typography from "../../../components/common/typography/Index";
@@ -22,7 +22,7 @@ const SettingsSideBar: React.FC<SettingsSideBarProps> = ({ toggleSidebar, sideba
   const containerRef = useRef<HTMLDivElement | null>(null);
   // const { theme } = useTheme();
 
-
+const {lang} = useParams()
 
   const handleNavigatePage = (state: string) => {
 
@@ -33,7 +33,7 @@ const SettingsSideBar: React.FC<SettingsSideBarProps> = ({ toggleSidebar, sideba
       dispatch(setActivePage(state));
     }
   };
-
+console.log(lang)
   return (
     <div ref={containerRef} className={`settings_sidebar ${theme}`}>
       {settingsLinks.map((link) => (
@@ -44,7 +44,7 @@ const SettingsSideBar: React.FC<SettingsSideBarProps> = ({ toggleSidebar, sideba
           {link.children && (
             <div className="sidebar-children">
               {link.children.map((child) => (
-                <Link key={child.state} to={child.path}>
+                <Link key={child.state} to={`/${lang}/${child.path}`}>
                   <Button
                     onClick={() => handleNavigatePage(child.state)}
                     className={`${

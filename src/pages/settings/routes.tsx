@@ -22,24 +22,24 @@ import { Link, Route } from "../../routes/types";
 
 export const settingsLinks: Link[] = [
   {
-    path: "/my-account",
+    path: "my-account",
     title: <FormattedMessage id="my-account" defaultMessage="My account" />,
     state: "my-account",
     icon: <FaClipboardList />,
     children: [
       {
-        path: "/settings/my-account/profile",
+        path: "settings/my-account/profile",
         title: <FormattedMessage id="profile" defaultMessage="profile" />,
         state: "profile",
       },
       {
-        path: "/settings/my-account/general",
+        path: "settings/my-account/general",
         title: <FormattedMessage id="general" defaultMessage="General" />,
         state: "general",
         icon: <FaTools />,
       },
       {
-        path: "/settings/my-account/appearance",
+        path: "settings/my-account/appearance",
         title: <FormattedMessage id="appearance" defaultMessage="Appearance" />,
         state: "appearance",
         icon: <FaPalette />,
@@ -47,18 +47,18 @@ export const settingsLinks: Link[] = [
     ],
   },
   {
-    path: "/settings/security",
+    path: "settings/security",
     title: <FormattedMessage id="security" defaultMessage="Security" />,
     state: "security",
     icon: <FaLock />,
     children: [
       {
-        path: "/settings/security/password",
+        path: "settings/security/password",
         title: <FormattedMessage id="add-password" defaultMessage="Password" />,
         state: "password",
       },
       {
-        path: "/settings/security/two-factor-auth",
+        path: "settings/security/two-factor-auth",
         title: (
           <FormattedMessage
             id="two-factor-auth"
@@ -70,18 +70,18 @@ export const settingsLinks: Link[] = [
     ],
   },
   {
-    path: "/settings/developer",
+    path: "settings/developer",
     title: <FormattedMessage id="developer" defaultMessage="Developer" />,
     state: "developer",
     icon: <FaUserShield />,
     children: [
       {
-        path: "/settings/developer/webhooks",
+        path: "settings/developer/webhooks",
         title: <FormattedMessage id="webhooks" defaultMessage="Webhooks" />,
         state: "webhooks",
       },
       {
-        path: "/settings/developer/api-keys",
+        path: "settings/developer/api-keys",
         title: <FormattedMessage id="api-keys" defaultMessage="API Keys" />,
         state: "api-keys",
       },
@@ -90,7 +90,7 @@ export const settingsLinks: Link[] = [
 ];
 
 export const settingsRoutes: Route = {
-  path: "settings",
+  path: "/:lang/settings",
   element: <Layout />,
   state: "settings",
   children: [

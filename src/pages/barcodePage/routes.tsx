@@ -4,7 +4,7 @@ import { BsUpcScan } from "react-icons/bs";
 import BarcodePage from ".";
 
 export const barcodePageLinks: Link = {
-  path: "/barcode-scanner",
+  path: "barcode-scanner",
   title: (
     <FormattedMessage id="barcode-scanner" defaultMessage="barcode scanner" />
   ),
@@ -13,7 +13,7 @@ export const barcodePageLinks: Link = {
 };
 
 export const barcodeRoutes: Route = {
-  path: "barcode-scanner",
+  path: "/:lang/barcode-scanner",
   element: <BarcodePage />,
   state: "pos",
 };

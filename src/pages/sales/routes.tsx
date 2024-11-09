@@ -39,7 +39,7 @@ export const salesLinks: Link = {
 };
 
 export const salesRoutes: Route = {
-  path: "sales",
+  path: "/:lang/sales",
   element: <SalesLayout />,
   state: "sales",
   children: [

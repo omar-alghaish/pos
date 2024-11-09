@@ -4,14 +4,14 @@ import Pos from "./Index";
 import { PiStorefrontLight } from "react-icons/pi";
 
 export const posLinks: Link = {
-  path: "/pos",
+  path: "pos",
   title: <FormattedMessage id="pos" defaultMessage="POS" />,
   state: "pos",
   icon: <PiStorefrontLight />,
 };
 
 export const posRoutes: Route = {
-  path: "pos",
+  path: "/:lang/pos",
   element: <Pos />,
   state: "pos",
 };

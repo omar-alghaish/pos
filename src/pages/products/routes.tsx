@@ -30,7 +30,7 @@ export const productsLinks: Link = {
 };
 
 export const productsRoutes: Route = {
-  path: "products",
+  path: "/:lang/products",
   element: <ProductsLayout />, 
   state: "products",
   children: [

@@ -2,9 +2,9 @@ import { FormattedMessage } from "react-intl";
 import { Link, Route } from "../../routes/types";
 import { BiStore } from "react-icons/bi";
 import AddProduct from "./pages/AddProduct";
-import ProductsList from "./indext";
 import { Navigate } from "react-router-dom";
 import ProductsLayout from "./layouts/ProductsLayout";
+import ProductsList from "./pages/ProductsTable";
 
 export const productsLinks: Link = {
   path: "/products",

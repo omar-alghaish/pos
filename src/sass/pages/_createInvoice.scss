@@ -1,0 +1,44 @@
+// Add this in your global styles or scoped styles
+
+
+  .create_invoice_page{
+    .create_invoice_form{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+        .ant-table {
+            overflow: auto;
+            .ant-table-thead,
+            .ant-table-tbody {
+              margin: 0;
+              padding: 0;
+              border-spacing: 0; // Remove spacing between rows
+            }
+            
+            .ant-table-thead > tr > th,
+            .ant-table-tbody > tr > td {
+              padding: 0 !important; // Remove padding inside table cells
+              margin: 0; // Remove margin
+            }
+            
+            .ant-table-wrapper {
+              margin: 0;
+              padding: 0;
+            }
+          }
+          
+          .ant-select {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: max-content;
+          }
+          
+          .ant-select-item,
+          .ant-select-item-option {
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+    }
+  }
+  

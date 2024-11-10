@@ -3909,6 +3909,31 @@ body.light a {
 .home_container {
   width: 100%;
 }
+.home_container .grid_buttons {
+  display: flex;
+  justify-items: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.home_container .grid_buttons .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  flex-grow: 1;
+  min-width: 100px;
+  width: 150px;
+  aspect-ratio: 2/1;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+.home_container .grid_buttons .item svg {
+  font-size: 30px;
+}
 
 .barcode_scanner_page_container {
   height: 100vh;
@@ -4136,4 +4161,40 @@ body.light a {
 
 .error_message {
   color: red;
+}
+
+.create_invoice_page .create_invoice_form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+.create_invoice_page .create_invoice_form .ant-table {
+  overflow: auto;
+}
+.create_invoice_page .create_invoice_form .ant-table .ant-table-thead,
+.create_invoice_page .create_invoice_form .ant-table .ant-table-tbody {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+}
+.create_invoice_page .create_invoice_form .ant-table .ant-table-thead > tr > th,
+.create_invoice_page .create_invoice_form .ant-table .ant-table-tbody > tr > td {
+  padding: 0 !important;
+  margin: 0;
+}
+.create_invoice_page .create_invoice_form .ant-table .ant-table-wrapper {
+  margin: 0;
+  padding: 0;
+}
+.create_invoice_page .create_invoice_form .ant-select {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: -moz-max-content;
+  height: max-content;
+}
+.create_invoice_page .create_invoice_form .ant-select-item,
+.create_invoice_page .create_invoice_form .ant-select-item-option {
+  margin: 0 !important;
+  padding: 0 !important;
 }/*# sourceMappingURL=style.css.map */

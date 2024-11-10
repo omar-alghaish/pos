@@ -54,9 +54,9 @@ export const salesRoutes: Route = {
       state: "orders-list",
     },
     {
-      path: "add-order",
+      path: "create-invoice",
       element: <AddOrder />,
-      state: "add-order",
+      state: "create-invoice",
     },
     {
       path: "recurring-invoice",

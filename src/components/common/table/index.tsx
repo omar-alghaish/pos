@@ -69,23 +69,23 @@ import { gsap } from "gsap";
 import Button from "../button/Index";
 import { MdDelete } from "react-icons/md";
 import { IoPrintOutline } from "react-icons/io5";
-import jsPDF from "jspdf"; // Import jsPDF
-import autoTable from "jspdf-autotable"; // Import autoTable
-import { utils, writeFile } from "xlsx"; // Import xlsx
 import { LuShare2 } from "react-icons/lu";
 import Typography from "../typography/Index";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../app/store";
+import { generateXLSX } from "../../../utils/xlsxUtils";
+import { sharePDF } from "../../../utils/shareUtils";
+import { generatePDF } from "../../../utils/pdfUtils";
 
 interface ITableProps<T> extends TableProps<T> {
-  dataSource: T[]; // Ensure dataSource is included in the props
+  dataSource: T[];
+  tableTitle: string;
+  excludeColumnsInExport?: string[];
 }
-
-
 
 const Table = <T extends { key: React.Key }>(props: ITableProps<T>) => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  const {apperance} = useSelector((state: RootState)=> state.settings)
+  const { apperance } = useSelector((state: RootState) => state.settings);
   const [showToast, setShowToast] = useState(false);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
@@ -118,88 +118,38 @@ const Table = <T extends { key: React.Key }>(props: ITableProps<T>) => {
   };
 
   const handlePrintPDF = () => {
-    const doc = new jsPDF();
     const selectedData = props.dataSource.filter((item) =>
       selectedRowKeys.includes(item.key)
     );
-
-    // Ensure columns is not undefined
-    if (!props.columns) {
-      return; // You may want to handle this case differently
+    if (props.columns) {
+      generatePDF(
+        selectedData,
+        props.columns,
+        apperance.darkBrandColor,
+        props.tableTitle,
+        props.excludeColumnsInExport
+      );
     }
-
-    // Type assertion for columns
-    const columns = props.columns as any;
-
-    // Use autoTable to create a table in the PDF
-    autoTable(doc, {
-      head: [columns.map((col: { title: any }) => col.title || "")], // Column titles
-      body: selectedData.map((item) =>
-        columns.map(
-          (col: { dataIndex: keyof T }) => item[col.dataIndex as keyof T] // Ensure proper typing
-        )
-      ),
-    });
-
-    doc.save("selected-items.pdf");
   };
 
   const handlePrintXLSX = () => {
     const selectedData = props.dataSource.filter((item) =>
       selectedRowKeys.includes(item.key)
     );
-
-    const worksheet = utils.json_to_sheet(selectedData);
-    const workbook = utils.book_new();
-    utils.book_append_sheet(workbook, worksheet, "Selected Items");
-    writeFile(workbook, "selected-items.xlsx");
+    generateXLSX(selectedData);
   };
 
   const handleSend = () => {
     const selectedData = props.dataSource.filter((item) =>
       selectedRowKeys.includes(item.key)
     );
-  
-    const message = `Check out these selected items: ${selectedData.map(item => JSON.stringify(item)).join(", ")}`;
-    const pdfFile = new jsPDF();
-
-    if (!props.columns) {
-      return; // You may want to handle this case differently
-    }
-  
+    const message = `Check out these selected items: ${selectedData
+      .map((item) => JSON.stringify(item))
+      .join(", ")}`;
     if (props.columns) {
-      if (selectedData.length > 0) {
-        const columns = props.columns as any;
-
-        // Use autoTable to create a table in the PDF
-        autoTable(pdfFile, {
-          head: [columns.map((col: { title: any }) => col.title || "")], // Column titles
-          body: selectedData.map((item) =>
-            columns.map(
-              (col: { dataIndex: keyof T }) => item[col.dataIndex as keyof T] // Ensure proper typing
-            )
-          ),
-        });
-  
-        const pdfBlob = pdfFile.output('blob');
-        
-        if (navigator.share) {
-          const file = new File([pdfBlob], "selected-items.pdf", { type: "application/pdf" });
-          navigator.share({
-            title: 'Selected Items',
-            text: message,
-            files: [file]
-          }).catch(console.error);
-        } else {
-          alert("Sharing not supported on this browser.");
-        }
-      }
-    } else {
-      console.error("Columns are not defined.");
+      sharePDF(selectedData, props.columns, message);
     }
   };
-
-  
 
   const printMenu = (
     <Menu>
@@ -217,16 +167,19 @@ const Table = <T extends { key: React.Key }>(props: ITableProps<T>) => {
       <AntTable
         rowSelection={rowSelection}
         columns={props.columns} // Spread columns from props
-        rowClassName={(record) => 
-          selectedRowKeys.includes(record.key) ? 
-          `ant-table-row-selected ${apperance.theme}` : ''
+        rowClassName={(record) =>
+          selectedRowKeys.includes(record.key)
+            ? `ant-table-row-selected ${apperance.theme}`
+            : ""
         }
         {...props} // Spread any additional props, including dataSource
       />
 
       {showToast && (
         <div className={`toast_table ${showToast ? "active" : ""}`}>
-      <Typography className="selected_message">You have selected {selectedRowKeys.length} item(s)</Typography>    
+          <Typography className="selected_message">
+            You have selected {selectedRowKeys.length} item(s)
+          </Typography>
           <div className="buttons">
             <Dropdown overlay={printMenu} trigger={["click"]}>
               <Button variant="outlined">
@@ -235,9 +188,9 @@ const Table = <T extends { key: React.Key }>(props: ITableProps<T>) => {
               </Button>
             </Dropdown>
             <Button variant="outlined" onClick={handleSend}>
-            <LuShare2 />
-                Send
-              </Button>
+              <LuShare2 />
+              Send
+            </Button>
             <Button variant="contained" color="error">
               <MdDelete />
               Delete

@@ -9,13 +9,13 @@ import NotesSection from "../components/NotesSection";
 import OptionsSection from "../components/OptionsSection";
 import { categories } from "../../pos/Index";
 import Button from "../../../components/common/button/Index";
-import { DataSourceItem } from "../pages/ProductsTable";
+import { ProductDataSourceItem } from "../pages/ProductsTable";
 import Typography from "../../../components/common/typography/Index";
 import SwitchButton from "../../../components/common/switchButton";
 import moment from "moment";
 
 const validationSchema = Yup.object().shape({
-  productName: Yup.string().required("Product name is required"),
+  name: Yup.string().required("Product name is required"),
   barcode: Yup.string().required("Product code is required"),
   dateAdded: Yup.date().required("Date is required"),
   price: Yup.number().required("Price is required"),
@@ -30,7 +30,7 @@ const validationSchema = Yup.object().shape({
 interface IAddProductForm {
   type: "update" | "add";
   title:string
-  values?: DataSourceItem;
+  values?: ProductDataSourceItem;
 }
 
 const AddProductForm: React.FC<IAddProductForm> = ({
@@ -56,7 +56,7 @@ const AddProductForm: React.FC<IAddProductForm> = ({
 
   const formik = useFormik({
     initialValues: {
-      productName: type === "update" && values ? values.productName : "",
+      name: type === "update" && values ? values.name : "",
       barcode: type === "update" && values ? values.barcode : "",
       // dateAdded: type === "update" && values ? moment(values.dateCreated) : moment(),
       dateAdded: dateAdded.toISOString(),
@@ -160,10 +160,10 @@ setImageSrc(values?.img || null)
 
         <InputField
           label="Product Name"
-          value={formik.values.productName}
+          value={formik.values.name}
           onChange={formik.handleChange}
-          error={formik.errors.productName}
-          name="productName"
+          error={formik.errors.name}
+          name="name"
         />
         <InputField
           label="Barcode"

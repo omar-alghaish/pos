@@ -7,7 +7,6 @@ import { ColumnsType } from "antd/lib/table";
 import { Button, Dropdown, Menu, Tag } from "antd";
 import {
 
-  FireOutlined,
   CloseCircleOutlined,
   CheckCircleOutlined,
 } from "@ant-design/icons"; // Icons for modern look
@@ -31,7 +30,6 @@ interface CategoryDataSourceItem {
   avgProductRating?: number; // New field
   totalInventoryValue?: number; // New field
   lowStockAlert?: boolean; // New field
-  trending?: boolean; // New field
 }
 
 const dataSource: CategoryDataSourceItem[] = [
@@ -50,7 +48,6 @@ const dataSource: CategoryDataSourceItem[] = [
     profitMargin: 20,
     avgProductRating: 4.5,
     lowStockAlert: false,
-    trending: true,
     totalInventoryValue: 30000,
   },
   {
@@ -68,7 +65,6 @@ const dataSource: CategoryDataSourceItem[] = [
     profitMargin: 35,
     avgProductRating: 4.1,
     lowStockAlert: true,
-    trending: false,
     totalInventoryValue: 18000,
   },
   {
@@ -86,7 +82,6 @@ const dataSource: CategoryDataSourceItem[] = [
     profitMargin: 25,
     avgProductRating: 3.8,
     lowStockAlert: false,
-    trending: true,
     totalInventoryValue: 15000,
   },
 ];
@@ -104,22 +99,6 @@ const CategoriesList = () => {
       render: (text: string) => <Typography>{text}</Typography>,
       sorter: (a, b) => a.categoryId.localeCompare(b.categoryId),
       sortDirections: ["ascend", "descend"],
-    },
-    {
-      title: "Trending",
-      dataIndex: "trending",
-      key: "trending",
-      render: (isTrending) =>
-        isTrending ? (
-          <Tag icon={<FireOutlined />} color="magenta">
-            Trending
-          </Tag>
-        ) : null,
-      filters: [
-        { text: "Trending", value: true },
-        { text: "Not Trending", value: false },
-      ],
-      onFilter: (value, record) => record.trending === value,
     },
     {
       title: "Total Inventory Value",
@@ -238,7 +217,9 @@ const CategoriesList = () => {
       title: "Actions",
       dataIndex: "actions",
       key: "actions",
-      width: 100,
+      // width: 100,
+      fixed: "right",
+      
       render: () => (
         <Dropdown overlay={actionMenu} trigger={["click"]}>
           <IconButton icon={<HiOutlineDotsVertical />} />

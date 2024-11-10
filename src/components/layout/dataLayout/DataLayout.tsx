@@ -375,6 +375,7 @@ interface LayoutProps {
   showSidebar?: boolean;
   filtersColumns?: any[];
   allowViewMode?: boolean;
+  excludeColumnsInExport?: string[]
 }
 
 const DataLayout: React.FC<LayoutProps> = ({
@@ -384,6 +385,7 @@ const DataLayout: React.FC<LayoutProps> = ({
   showSidebar = false,
   title,
   allowViewMode,
+  excludeColumnsInExport
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false);
@@ -473,6 +475,8 @@ const DataLayout: React.FC<LayoutProps> = ({
                 rowKey="key"
                 loading={false}
                 scroll={{ y: 600, x: "max-content" }}
+                tableTitle={title}
+                excludeColumnsInExport={excludeColumnsInExport}
               />
             ) : (
               <GridContainer
@@ -488,8 +492,8 @@ const DataLayout: React.FC<LayoutProps> = ({
                       onClick={() => setDetailsDrawerOpen(true)}
                       menu={menu}
                       truncateString={(str: string, maxLength: number) =>
-                        str.length > maxLength
-                          ? str.slice(0, maxLength) + "..."
+                        str?.length > maxLength
+                          ? str?.slice(0, maxLength) + "..."
                           : str
                       }
                     />

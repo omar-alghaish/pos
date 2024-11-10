@@ -14,11 +14,11 @@ import Modal from "../../../components/common/modal/Index";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import IconButton from "../../../components/common/iconButton/Index";
 import AddProductForm from "../components/AddProductForm";
-export interface DataSourceItem {
+export interface ProductDataSourceItem {
   key: string;
-  productId: string;
+  id: string;
   img: string;
-  productName: string;
+  name: string;
   category: string;
   stockQuantity: number;
   price: number;
@@ -41,12 +41,12 @@ export interface DataSourceItem {
   notes?: string[];
 }
 
-const dataSource: DataSourceItem[] = [
+export const productsData: ProductDataSourceItem[] = [
   {
     key: "1",
-    productId: "P001",
+    id: "P001",
     img: img,
-    productName: "Wireless Mouse",
+    name: "Wireless Mouse",
     SKU: "WM-001",
     barcode: "1234567890123",
     category: "Electronics",
@@ -71,8 +71,8 @@ const dataSource: DataSourceItem[] = [
     options: [{ name: "test", price: "35" }],
     notes: ["this is test"],
 
-    productId: "P002",
-    productName: "Mechanical Keyboard",
+    id: "P002",
+    name: "Mechanical Keyboard",
     SKU: "MK-002",
     barcode: "1234567890124",
     category: "Electronics",
@@ -94,10 +94,10 @@ const dataSource: DataSourceItem[] = [
   },
   {
     key: "3",
-    productId: "P003",
+    id: "P003",
     img: img,
 
-    productName: "USB-C Hub",
+    name: "USB-C Hub",
     SKU: "UH-003",
     barcode: "1234567890125",
     category: "Accessories",
@@ -118,11 +118,11 @@ const dataSource: DataSourceItem[] = [
   },
   {
     key: "4",
-    productId: "P004",
+    id: "P004",
     img: img,
     options: [{ name: "test", price: "35" }],
 
-    productName: "HDMI Cable",
+    name: "HDMI Cable",
     SKU: "HC-004",
     barcode: "1234567890126",
     category: "Accessories",
@@ -143,11 +143,11 @@ const dataSource: DataSourceItem[] = [
   },
   {
     key: "5",
-    productId: "P005",
+    id: "P005",
     img: img,
     notes: ["this is test"],
 
-    productName: "Wireless Earbuds",
+    name: "Wireless Earbuds",
     SKU: "WE-005",
     barcode: "1234567890127",
     category: "Audio",
@@ -174,7 +174,7 @@ const ProductsList: React.FC = () => {
   const [isNotesModalVisible, setNotesModalVisible] = useState(false);
   const [isOptionsModalVisible, setOptionsModalVisible] = useState(false);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<DataSourceItem>()
+  const [selectedRow, setSelectedRow] = useState<ProductDataSourceItem>()
 
   const [isDescriptionModalVisible, setDescriptionModalVisible] =
     useState(false);
@@ -186,11 +186,11 @@ const ProductsList: React.FC = () => {
     { name: string; price: string }[]
   >([]);
 
-  const columns: ColumnsType<DataSourceItem> = [
+  const columns: ColumnsType<ProductDataSourceItem> = [
     {
       title: "ID",
-      dataIndex: "productId",
-      key: "productId",
+      dataIndex: "id",
+      key: "id",
     },
     {
       title: "img",
@@ -213,9 +213,9 @@ const ProductsList: React.FC = () => {
     },
     {
       title: "Product",
-      dataIndex: "productName",
-      key: "productName",
-      sorter: (a, b) => a.productName.localeCompare(b.productName),
+      dataIndex: "name",
+      key: "name",
+      sorter: (a, b) => a.name.localeCompare(b.name),
       sortDirections: ["ascend", "descend"],
     },
     {
@@ -286,6 +286,8 @@ const ProductsList: React.FC = () => {
       title: "Low Stock Alert",
       dataIndex: "lowStockAlert",
       key: "lowStockAlert",
+      fixed: "right",
+
       render: (alert) =>
         alert ? (
           <Tag icon={<WarningOutlined />} color="volcano">
@@ -444,7 +446,8 @@ const ProductsList: React.FC = () => {
       title: "Actions",
       dataIndex: "actions",
       key: "actions",
-      width: 100,
+      fixed: "right",
+
       render: (_,row) => (
         <Dropdown  overlay={actionMenu} trigger={["click"]}>
           <IconButton onClick={()=> setSelectedRow(row)} icon={<HiOutlineDotsVertical />} />
@@ -524,10 +527,12 @@ const ProductsList: React.FC = () => {
     <>
       <DataLayout
         columns={columns}
-        dataSource={dataSource}
+        dataSource={productsData}
         title={"products"}
         showSidebar={true}
         filtersColumns={filtersColumns}
+        excludeColumnsInExport={['actions','options']}
+        allowViewMode
       />
       <Modal
         title="Notes"
@@ -565,7 +570,7 @@ const ProductsList: React.FC = () => {
         <p>{currentDescription}</p>
       </Modal>
       <Modal
-        title={`Edit ${selectedRow?.productName}`}
+        title={`Edit ${selectedRow?.name}`}
         isOpen={isEditModalOpen}
         onClose={handleCloseEditModal}
       >

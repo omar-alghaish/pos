@@ -2,9 +2,9 @@ import AddOrderForm from "../components/AddOrderForm"
 
 const CreateInvoice = () => {
   return (
-    <div>
+    <div className="create_invoice_page">
 
-     <AddOrderForm title="Add Category" type={"add"} />
+     <AddOrderForm title="Create Invoice" type={"add"} />
     </div>
   )
 }
